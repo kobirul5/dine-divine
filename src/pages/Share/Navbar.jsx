@@ -9,7 +9,7 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to="/" className='btn'>Home</NavLink></li>
-        <li><NavLink to="/All Foods" className='btn'>All Foods</NavLink></li>
+        <li><NavLink to="/allFood" className='btn'>All Foods</NavLink></li>
         <li><NavLink to="/Gallery" className='btn'>Gallery</NavLink></li>
     </>
     return (
@@ -52,7 +52,7 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>My Foods</a></li>
+                        <li><Link >My Foods</Link></li>
                         <li><Link to="/addFood" >Add food</Link></li>
                         <li><a>My Orders</a></li>
                     </ul>
