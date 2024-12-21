@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import AuthContext from "../../provider/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const { signInUser, setUser } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -14,6 +15,7 @@ const Login = () => {
             .then((currentUser) => {
                 const user = currentUser.user;
                 setUser(user)
+                navigate("/")
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -58,7 +60,8 @@ const Login = () => {
                     </form>
                     <div className='px-8 pt-4 pb-8'>
                         <button className='btn w-full bg-red-300'>Google</button>
-                        <Link to="/auth/register">register</Link>
+                        <p>Don't have Accout? <Link className="text-blue-400" to="/auth/register">Register</Link></p>
+                        
                     </div>
                 </div>
             </div>

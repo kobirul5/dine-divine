@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
 import { FaBars } from 'react-icons/fa6';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import AuthContext from '../../provider/AuthContext';
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext)
+    const {user,userLogout} = useContext(AuthContext)
 
 
     const links = <>
         <li><NavLink to="/" className='btn'>Home</NavLink></li>
         <li><NavLink to="/All Foods" className='btn'>All Foods</NavLink></li>
         <li><NavLink to="/Gallery" className='btn'>Gallery</NavLink></li>
-        <li><NavLink to="/auth/login" className='btn'>Login</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -37,12 +36,12 @@ const Navbar = () => {
                 
                 {
                     user?.email ? 
-                    <button className="btn">Log Out</button>
+                    <button onClick={userLogout} className="btn">Log Out</button>
                     :
-                    <button className="btn">LogIn</button>
+                    <Link to="/auth/login" className="btn">Login</Link>
                 }
                 {/* dropdown profile option */}
-                <div className={`dropdown dropdown-end ${user?.email ? "flex": "hidden"}`}>
+                <div className={`dropdown dropdown-end ${!user?.email && "hidden"}`}>
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img

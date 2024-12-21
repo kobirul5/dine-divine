@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import AuthContext from '../../provider/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const { setUser, createUser, setProfileData} = useContext(AuthContext)
@@ -90,6 +90,7 @@ const Register = () => {
                     </form>
                     <div className='px-8 pt-4 pb-8'>
                         <button className='btn w-full bg-red-300'>Google</button>
+                        <p>Don't have Accout? <Link className="text-blue-400" to="/auth/login">Login</Link></p>
                     </div>
                 </div>
             </div>
