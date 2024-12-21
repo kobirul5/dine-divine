@@ -2,9 +2,11 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import AuthContext from "../../provider/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const AddFood = () => {
     const {user} = useContext(AuthContext)
+    const navigate = useNavigate()
 
 
     const handleSubmit = async (e) => {
@@ -12,12 +14,15 @@ const AddFood = () => {
         const form = e.target;
 
         const foodName = form.foodName.value
+        const email = form.email.value
+        const name = form.name.value
         const foodImage = form.foodImage.value
         const foodCategory = form.foodCategory.value
         const quantity = form.quantity.value
         const price = form.price.value
         const foodOrigin = form.foodOrigin.value
         const description = form.description.value
+        
 
         const foodData = {
             foodName,
@@ -27,18 +32,18 @@ const AddFood = () => {
             price,
             foodOrigin,
             description,
+            email,
+            name
         }
         console.log(foodData)
 
-        // try {
-        //     const response = await axios.post("http://localhost:3000/api/food", foodData);
-        //     if (response.data.success) {
-        //         toast.success("Food item added successfully!");
-        //     }
-        // } catch (error) {
-        //     console.error("Error adding food item:", error);
-        //     toast.error("Failed to add food item.");
-        // }
+        try {
+            await axios.post("http://localhost:3000/allFood", foodData);
+            toast.success("Food item added successfully!");
+            navigate("/myFood")
+        } catch (error) {
+            toast.error("Failed to add food item.");
+        }
     };
 
     return (
@@ -130,7 +135,7 @@ const AddFood = () => {
                             <label className="label">Name</label>
                             <input
                                 type="text"
-                                name="foodOrigin"
+                                name="name"
                                 className="input input-bordered"
                                 defaultValue={user?.displayName}
                                 readOnly
@@ -142,7 +147,7 @@ const AddFood = () => {
                             <label className="label">Email</label>
                             <input
                                 type="text"
-                                name="foodOrigin"
+                                name="email"
                                 defaultValue={user?.email}
                                 readOnly
                                 className="input input-bordered"
