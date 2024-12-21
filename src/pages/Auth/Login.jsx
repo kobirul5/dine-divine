@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import AuthContext from "../../provider/AuthContext";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const { signInUser, setUser } = useContext(AuthContext)
@@ -13,7 +14,6 @@ const Login = () => {
             .then((currentUser) => {
                 const user = currentUser.user;
                 setUser(user)
-                console.log(user)
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -58,6 +58,7 @@ const Login = () => {
                     </form>
                     <div className='px-8 pt-4 pb-8'>
                         <button className='btn w-full bg-red-300'>Google</button>
+                        <Link to="/auth/register">register</Link>
                     </div>
                 </div>
             </div>

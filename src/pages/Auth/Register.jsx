@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import AuthContext from '../../provider/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-    const { setUser, createUser,} = useContext(AuthContext)
+    const { setUser, createUser, setProfileData} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -15,6 +17,13 @@ const Register = () => {
         .then((currentUser) => {
             const user = currentUser.user;
             setUser(user)
+            setProfileData({displayName: name, photoURL: photo})
+            .then(()=>{
+                navigate("/")
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
           })
           .catch((error) => {
             const errorMessage = error.message;

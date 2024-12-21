@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaBars } from 'react-icons/fa6';
 import { NavLink } from 'react-router-dom';
+import AuthContext from '../../provider/AuthContext';
 
 const Navbar = () => {
-    
+    const {user} = useContext(AuthContext)
 
 
     const links = <>
