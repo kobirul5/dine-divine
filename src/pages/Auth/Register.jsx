@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import AuthContext from '../../provider/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const { setUser, createUser, setProfileData} = useContext(AuthContext)
@@ -13,20 +14,32 @@ const Register = () => {
         const name = form.name.value
         const password = form.password.value
         const photo = form.photo.value
+
+
+        const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+        if (!regex.test(password)) {
+          return toast.error(
+            "Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long."
+          );}
+
+
+
         createUser(email, password)
         .then((currentUser) => {
             const user = currentUser.user;
             setUser(user)
             setProfileData({displayName: name, photoURL: photo})
             .then(()=>{
+                toast.success("Sign Up Successful")
                 navigate("/")
             })
             .catch((error)=>{
-                console.log(error)
+                toast.error(error.message)
             })
           })
           .catch((error) => {
             const errorMessage = error.message;
+            toast.error(errorMessage)
 
           });
         
@@ -89,7 +102,6 @@ const Register = () => {
                         </div>
                     </form>
                     <div className='px-8 pt-4 pb-8'>
-                        <button className='btn w-full bg-red-300'>Google</button>
                         <p>Don't have Accout? <Link className="text-blue-400" to="/auth/login">Login</Link></p>
                     </div>
                 </div>

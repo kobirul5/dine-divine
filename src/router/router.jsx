@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import Register from "../pages/Auth/Register";
 import AuthLayout from "../layout/AuthLayout";
 import Login from "../pages/Auth/Login";
+import AddFood from "../pages/AddFood/AddFood";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>
+            },
+            {
+                path: "/addFood",
+                element: <AddFood></AddFood>
             }
         ]
     },
