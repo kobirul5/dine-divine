@@ -12,6 +12,8 @@ import MyFood from "../pages/MyFood/MyFood";
 import MyFoodPri from "../privateRoute/MyFoodPri";
 import UpdateFood from "../pages/UpdateFood/UpdateFood";
 import FoodPurchase from "../pages/FoodPurchase/FoodPurchase";
+import MyOrders from "../pages/MyOrders/MyOrders";
+import FoodPurchasePri from "../privateRoute/FoodPurchasePri";
 
 const router = createBrowserRouter([
     {
@@ -39,13 +41,17 @@ const router = createBrowserRouter([
                 element: <MyFoodPri><MyFood></MyFood></MyFoodPri>
             },
             {
+                path: "/myOrders",
+                element: <MyOrders></MyOrders>
+            },
+            {
                 path: "/updateFood/:id",
                 element: <UpdateFood></UpdateFood>,
                 loader: ({params})=> fetch(`http://localhost:3000/food/${params.id}`)
             },
             {
                 path:"/purchase/:id",
-                element: <FoodPurchase></FoodPurchase>,
+                element: <FoodPurchasePri><FoodPurchase></FoodPurchase></FoodPurchasePri>,
                 loader: ({params})=> fetch(`http://localhost:3000/food/${params.id}`)
             }
         ]

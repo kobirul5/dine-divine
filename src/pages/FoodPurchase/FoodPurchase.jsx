@@ -1,31 +1,38 @@
 import { useContext, useState } from "react";
 import AuthContext from "../../provider/AuthContext";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const FoodPurchase = () => {
     const { user } = useContext(AuthContext)
     const food = useLoaderData()
     const [foodPrice, setFoodPrice] = useState(food.price);
-    const [FoodQuantity, setFoodQuantity] = useState(1);
+    const [foodQuantity, setFoodQuantity] = useState(1);
+    const navigate = useNavigate()
 
-    const { foodName, foodImage, foodCategory, quantity, price, foodOrigin, description, email, name
-    } = food
-    const handlePurchase = (e) => {
+    const { foodName, foodImage, price} = food
+    const handlePurchase =async (e) => {
         e.preventDefault();
 
         // Prepare purchase data
         const purchaseData = {
             foodName,
-            price: parseFloat(price),
-            quantity: parseInt(quantity, 10),
-            buyerName: user.name,
+            foodPrice: parseFloat(foodPrice),
+            quantity: parseInt(foodQuantity),
+            buyerName: user?.displayName,
             buyerEmail: user.email,
             buyingDate: Date.now(),
         };
 
         // Send data to the database (API call or database integration)
-        console.log("Purchase Data:", purchaseData);
-        alert("Purchase successful!");
+        try {
+            await axios.post("http://localhost:3000/foodPurchase", purchaseData);
+            toast.success("Food item Update successfully!");
+            navigate("/myOrders")
+        } catch (error) {
+            toast.error("Failed to Update food item.");
+        }
 
         // Reset form
     };
@@ -56,7 +63,7 @@ const FoodPurchase = () => {
                             <label className="block font-medium">Price</label>
                             <input
                                 type="number"
-                                value={price * FoodQuantity}
+                                value={price * foodQuantity}
                                 onChange={(e) => setFoodPrice(e.target.value)}
                                 className="w-full p-2 border rounded"
                                 required
@@ -68,7 +75,7 @@ const FoodPurchase = () => {
                             <label className="block font-medium">Quantity</label>
                             <input
                                 type="number"
-                                defaultValue={FoodQuantity}
+                                defaultValue={foodQuantity}
                                 onChange={(e) => setFoodQuantity(e.target.value)}
                                 className="w-full p-2 border rounded"
                                 required
