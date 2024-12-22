@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { format } from "date-fns";
 import { FaTrash } from 'react-icons/fa6';
+import toast from 'react-hot-toast';
 
 
 const MyOrders = () => {
@@ -24,6 +25,38 @@ const MyOrders = () => {
         };
         fetchData();
     }, [user?.email]);
+
+
+    const modernDelete = (id) =>{
+        toast(
+            (t) => (
+              <span className='flex gap-2 justify-center items-center'>
+                Are you <b>sure?</b>
+                <button className='btn bg-red-600 text-white' 
+                onClick={()=>{
+                  toast.dismiss(t.id)
+                  handleDelete(id)
+                }}
+                >Yes</button>
+                <button className='btn bg-green-700 text-white' onClick={() => toast.dismiss(t.id)}>Cancel</button>
+              </span>
+            ),
+          );
+    }
+
+    const handleDelete = async(id) => {
+
+        try {
+            const { data } = await axios.delete(`http://localhost:3000/myOrders/${id}`);
+            const filterData = myOrders.filter((d)=>d._id !== id)
+            setMyOrders(filterData)
+            toast("Delete Successfully")
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
     return (
         <div>
             <div className="overflow-x-auto">
@@ -49,7 +82,7 @@ const MyOrders = () => {
                                 <td>{order?.foodName}</td>
                                 <td>{order?.buyerName}</td>
                                 <td>{format(order?.buyingDate, "dd/MM/yyyy")}</td>
-                                <td><FaTrash/></td>
+                                <td><button onClick={()=>modernDelete(order?._id)}><FaTrash /></button></td>
                             </tr>
                             )
                         }
