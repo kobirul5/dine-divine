@@ -3,9 +3,9 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 const Spinner = () => {
     return (
-        <div>
+        <div className="mx-auto mt-60 flex justify-center">
               <ClipLoader
-                  color={"#FFFF00"}
+                  color={"#574216"}
                     loading={true}
                     // cssOverride={override}
                   size={150}

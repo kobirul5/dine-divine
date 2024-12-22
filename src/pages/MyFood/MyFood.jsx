@@ -3,10 +3,11 @@ import AuthContext from "../../provider/AuthContext";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import Spinner from "../Share/Spinner";
+import MyFoodCard from "./MyfoodCard";
 
 const MyFood = () => {
-    const [foods, setFoods] = useState()
-    const {user, loading} = useContext(AuthContext)
+    const [foods, setFoods] = useState([])
+    const { user, loading } = useContext(AuthContext)
 
     useEffect(() => {
         // The URL of the API endpoint
@@ -22,13 +23,20 @@ const MyFood = () => {
         fetchData();
     }, [user?.email]);
 
-    if(loading){
+    if (loading) {
         return <Spinner></Spinner>
     }
     return (
-        <div>
-            hi
-            {foods?.length}
+        <div className="container mx-auto px-5 md:px-10 my-10">
+
+            <div className="max-w-[80%] mx-auto">
+                {
+                    foods?.map((food, idx) => <MyFoodCard
+                        key={idx}
+                        food={food}
+                    ></MyFoodCard>)
+                }
+            </div>
         </div>
     );
 };
