@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaTrash } from 'react-icons/fa6';
 import { FaEdit } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const MyFoodCard = ({ food }) => {
     const { _id, foodName, foodImage, foodCategory, quantity, price, foodOrigin, description, email, name
     } = food
@@ -18,7 +19,7 @@ const MyFoodCard = ({ food }) => {
                 </div>
                 <div className='flex md:flex-col gap-5 text-2xl'>
                     <button className='text-red-500'><FaTrash></FaTrash></button>
-                    <button><FaEdit /></button>
+                    <Link to={`/updateFood/${_id}`} className=''><FaEdit /></Link>
                 </div>
             </div>
 
