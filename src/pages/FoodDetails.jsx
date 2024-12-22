@@ -32,7 +32,7 @@ const FoodDetails = () => {
                 </h2>
 
                 <p className="text-gray-600 text-3xl font-bold ">
-                     ${food?.price.toFixed(2)}
+                     ${food?.price}
                 </p>
                 <p className="text-gray-600  ">
                     <strong>Category:</strong> {food?.foodCategory}

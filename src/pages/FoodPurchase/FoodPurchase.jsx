@@ -11,7 +11,7 @@ const FoodPurchase = () => {
     const [foodQuantity, setFoodQuantity] = useState(1);
     const navigate = useNavigate()
 
-    const { foodName, foodImage, price} = food
+    const { foodName, foodImage, price,} = food
     const handlePurchase =async (e) => {
         e.preventDefault();
 
@@ -19,6 +19,7 @@ const FoodPurchase = () => {
         const purchaseData = {
             foodName,
             foodPrice: parseFloat(foodPrice),
+            foodImage,
             quantity: parseInt(foodQuantity),
             buyerName: user?.displayName,
             buyerEmail: user.email,
