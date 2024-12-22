@@ -11,7 +11,7 @@ const FoodCard = ({food}) => {
                 <h2 className="card-title">{foodName}</h2>
                 <p>{description.slice(0,40)}...</p>
                 <div className="card-actions justify-between items-center">
-                    <span className="text-xl font-semibold text-green-600">{`$${price}`}</span>
+                    <p className="text-xl font-semibold text-green-600">{`$${price}`}</p>
                     <Link to={`/foodDetails/${_id}`} className="btn font-bold ">See Details</Link>
                 </div>
             </div>

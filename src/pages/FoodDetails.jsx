@@ -26,10 +26,14 @@ const FoodDetails = () => {
                 alt={food?.foodName}
                 className="w-full object-cover rounded-lg"
             />
-            <div className="p-4 space-y-2">
+            <div className="p-4 space-y-1">
                 <h2 className="text-xl md:text-4xl font-bold">
                     {food?.foodName}
                 </h2>
+
+                <p className="text-gray-600 text-3xl font-bold ">
+                     ${food?.price.toFixed(2)}
+                </p>
                 <p className="text-gray-600  ">
                     <strong>Category:</strong> {food?.foodCategory}
                 </p>
@@ -39,9 +43,7 @@ const FoodDetails = () => {
                 <p className="text-gray-600  ">
                     <strong>Quantity Available:</strong> {food?.quantity}
                 </p>
-                <p className="text-gray-600  ">
-                    <strong>Price:</strong> ${food?.price.toFixed(2)}
-                </p>
+                <p className="font-bold text-gray-600">Purchase Count : 0</p>
                 <p className="text-gray-700 mt-2"> <strong>Description:</strong> {food?.description}</p>
                 <div>
                     <Link className="btn">Purchase</Link>

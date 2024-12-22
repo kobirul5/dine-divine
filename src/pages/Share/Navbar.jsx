@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { FaBars } from 'react-icons/fa6';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import AuthContext from '../../provider/AuthContext';
 
 const Navbar = () => {
     const {user,userLogout} = useContext(AuthContext)
+    const location = useLocation()
 
 
     const links = <>
@@ -52,7 +53,7 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><Link >My Foods</Link></li>
+                        <li><Link to="/myFood" state={user?.email}>My Foods</Link></li>
                         <li><Link to="/addFood" >Add food</Link></li>
                         <li><a>My Orders</a></li>
                     </ul>
