@@ -18,7 +18,7 @@ const FoodDetails = () => {
         };
         fetchData();
     }, [id]);
-    console.log(food)
+
     return (
         <div className="container grid md:grid-cols-2 gap-5 justify-center items-center min-h-[400px] mx-auto bg-white w-10/12 rounded-lg overflow-hidden border my-14 px-10">
             <img
@@ -46,7 +46,7 @@ const FoodDetails = () => {
                 <p className="font-bold text-gray-600">Purchase Count : 0</p>
                 <p className="text-gray-700 mt-2"> <strong>Description:</strong> {food?.description}</p>
                 <div>
-                    <Link className="btn">Purchase</Link>
+                    <Link to={`/purchase/${id}`} className="btn">Purchase</Link>
                 </div>
             </div>
         </div>
