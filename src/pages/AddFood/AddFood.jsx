@@ -35,7 +35,6 @@ const AddFood = () => {
             email,
             name
         }
-        console.log(foodData)
 
         try {
             await axios.post("http://localhost:3000/allFood", foodData);

@@ -6,6 +6,7 @@ import AuthLayout from "../layout/AuthLayout";
 import Login from "../pages/Auth/Login";
 import AddFood from "../pages/AddFood/AddFood";
 import AllFood from "../pages/AllFood/AllFood";
+import FoodDetails from "../pages/FoodDetails";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: "/allFood",
                 element: <AllFood></AllFood>
+            },
+            {
+                path: "/foodDetails/:id",
+                element: <FoodDetails></FoodDetails>
             }
         ]
     },

@@ -1,17 +1,18 @@
-import React from 'react';
+
+import { Link } from 'react-router-dom';
 
 const FoodCard = ({food}) => {
-    const { foodName, foodImage, foodCategory, quantity, price, foodOrigin, description, email, name
+    const {_id, foodName, foodImage, foodCategory, quantity, price, foodOrigin, description, email, name
     } = food
     return (
         <div className="card  bg-base-100 shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <figure><img src={foodImage} alt={foodName} className="w-full h-56 object-cover" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{foodName}</h2>
-                <p>{description}</p>
+                <p>{description.slice(0,40)}...</p>
                 <div className="card-actions justify-between items-center">
                     <span className="text-xl font-semibold text-green-600">{`$${price}`}</span>
-                    <button className="btn btn-primary">Add to Cart</button>
+                    <Link to={`/foodDetails/${_id}`} className="btn btn-primary">See Details</Link>
                 </div>
             </div>
         </div>

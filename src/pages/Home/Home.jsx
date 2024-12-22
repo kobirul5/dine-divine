@@ -6,26 +6,19 @@ import ClipLoader from "react-spinners/ClipLoader";
 const Home = () => {
     const { loading } = useContext(AuthContext)
 
-
-    if (loading) {
-        return <div>
-            <ClipLoader
-                color={color}
-                loading={loading}
-                cssOverride={override}
-                size={150}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-            /> <ClipLoader
-                color={"#FFFF00"}
-                loading={loading}
-                // cssOverride={override}
-                size={150}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-            />
-        </div>
-    }
+     // loading
+    // if (loading) {
+    //     return <div>
+    //         <ClipLoader
+    //             color={"#FFFF00"}
+    //             // loading={loading}
+    //             // cssOverride={override}
+    //             size={150}
+    //             aria-label="Loading Spinner"
+    //             data-testid="loader"
+    //         />
+    //     </div>
+    // }
     return (
         <div>
             hello
