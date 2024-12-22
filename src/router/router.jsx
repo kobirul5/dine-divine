@@ -7,6 +7,7 @@ import Login from "../pages/Auth/Login";
 import AddFood from "../pages/AddFood/AddFood";
 import AllFood from "../pages/AllFood/AllFood";
 import FoodDetails from "../pages/FoodDetails";
+import AddFoodPri from "../privateRoute/AddFoodPri";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addFood",
-                element: <AddFood></AddFood>
+                element: <AddFoodPri><AddFood></AddFood></AddFoodPri>
             },
             {
                 path: "/allFood",

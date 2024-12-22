@@ -12,7 +12,7 @@ const FoodCard = ({food}) => {
                 <p>{description.slice(0,40)}...</p>
                 <div className="card-actions justify-between items-center">
                     <span className="text-xl font-semibold text-green-600">{`$${price}`}</span>
-                    <Link to={`/foodDetails/${_id}`} className="btn btn-primary">See Details</Link>
+                    <Link to={`/foodDetails/${_id}`} className="btn font-bold ">See Details</Link>
                 </div>
             </div>
         </div>
