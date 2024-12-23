@@ -14,6 +14,8 @@ import UpdateFood from "../pages/UpdateFood/UpdateFood";
 import FoodPurchase from "../pages/FoodPurchase/FoodPurchase";
 import MyOrders from "../pages/MyOrders/MyOrders";
 import FoodPurchasePri from "../privateRoute/FoodPurchasePri";
+import Gallery from "../pages/Gallary/Gallery";
+
 
 const router = createBrowserRouter([
     {
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>
+            },
+            {
+                path: "/gallery",
+                element: <Gallery></Gallery>
             },
             {
                 path: "/addFood",
