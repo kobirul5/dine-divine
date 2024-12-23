@@ -8,7 +8,8 @@ const FoodPurchase = () => {
     const { user } = useContext(AuthContext)
     const food = useLoaderData()
     const [foodPrice, setFoodPrice] = useState(food.price);
-    const [foodQuantity, setFoodQuantity] = useState(1);
+    const [foodQuantity, setFoodQuantity] = useState();
+    const [availableFood, setAvailableFood] = useState(food.quantity)
     const navigate = useNavigate()
 
     const { foodName, foodImage, price,} = food
@@ -25,22 +26,35 @@ const FoodPurchase = () => {
             buyerEmail: user.email,
             buyingDate: Date.now(),
         };
+        // condition 
+        if(availableFood < foodQuantity || availableFood == 0){
+           return toast.error("Not Enough")
+        }
+        else if(food.email === user?.email){
+            return toast.error("same User can't buy food")
+        }
 
         // Send data to the database (API call or database integration)
         try {
             await axios.post("http://localhost:3000/foodPurchase", purchaseData);
             toast.success("Food item Update successfully!");
-            navigate("/myOrders")
+            // navigate("/myOrders")
+            handleQuantityUpdate()
         } catch (error) {
             toast.error("Failed to Update food item.");
         }
 
         // Reset form
     };
-    console.log(foodName, price)
+
+    const handleQuantityUpdate = () =>{
+        setAvailableFood(availableFood - foodQuantity)
+    }
+    console.log(food)
     return (
         <div className="container mx-auto p-6 bg-white shadow rounded-lg">
-            <h1 className="text-2xl font-bold mb-4">Food Purchase</h1>
+            <h1 className="text-3xl md:text-5xl text-center font-bold mb-8">Food Purchase</h1>
+            <h1 className="text-2xl font-bold mb-8">Food Available:- {availableFood} </h1>
             <div className="flex flex-col sm:flex-row gap-10">
                 <div className="flex-1 flex justify-center items-center">
                     <img className="" src={foodImage} alt="" />
@@ -77,7 +91,7 @@ const FoodPurchase = () => {
                             <input
                                 type="number"
                                 defaultValue={foodQuantity}
-                                onChange={(e) => setFoodQuantity(e.target.value)}
+                                onChange={(e) => {setFoodQuantity(e.target.value)}}
                                 className="w-full p-2 border rounded"
                                 required
                             />
@@ -108,8 +122,9 @@ const FoodPurchase = () => {
                         {/* Purchase Button */}
                         <div>
                             <button
+                                 disabled= {food.quantity < 1 || food.quantity < foodQuantity}
                                 type="submit"
-                                className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+                                className="w-full btn py-2 px-4 rounded "
                             >
                                 Purchase
                             </button>
