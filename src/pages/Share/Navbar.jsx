@@ -9,15 +9,15 @@ const Navbar = () => {
 
 
     const links = <>
-        <li><NavLink to="/" className='btn'>Home</NavLink></li>
-        <li><NavLink to="/allFood" className='btn'>All Foods</NavLink></li>
-        <li><NavLink to="/gallery" className='btn'>Gallery</NavLink></li>
+        <li><NavLink to="/" className='btn text-primaryColor'>Home</NavLink></li>
+        <li><NavLink to="/allFood" className='btn text-primaryColor'>All Foods</NavLink></li>
+        <li><NavLink to="/gallery" className='btn text-primaryColor'>Gallery</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-none backdrop-blur-sm static top-0">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div tabIndex={0} role="button" className="btn  lg:hidden">
                         <FaBars />
                     </div>
                     <ul
@@ -26,7 +26,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Dine Divine</a>
+                <Link to="/" className="font-bold text-primaryColor  text-xl">Dine Divine</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-3">
@@ -37,13 +37,13 @@ const Navbar = () => {
                 
                 {
                     user?.email ? 
-                    <button onClick={userLogout} className="btn">Log Out</button>
+                    <button onClick={userLogout} className="btn text-primaryColor">Log Out</button>
                     :
-                    <Link to="/auth/login" className="btn">Login</Link>
+                    <Link to="/auth/login" className="btn text-primaryColor">Login</Link>
                 }
                 {/* dropdown profile option */}
                 <div className={`dropdown dropdown-end ${!user?.email && "hidden"}`}>
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                    <div tabIndex={0} role="button" className="btn btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img
                                 alt="User Photo"

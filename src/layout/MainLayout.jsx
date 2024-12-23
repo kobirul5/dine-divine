@@ -8,22 +8,24 @@ import Spinner from "../pages/Share/Spinner";
 
 
 const MainLayout = () => {
- const {loading,} = useContext(AuthContext)
- 
+    const { loading, } = useContext(AuthContext)
 
 
-    if(loading){
+
+    if (loading) {
         return <Spinner></Spinner>
     }
     return (
         <div>
-            <Navbar></Navbar>
+            <nav className=" text-primaryColor">
+                <Navbar></Navbar>
+            </nav>
             <Toaster></Toaster>
             <section className="min-h-[calc(100vh-286px)]">
-            <Outlet></Outlet>
+                <Outlet></Outlet>
             </section>
             <Footer></Footer>
-            
+
         </div>
     );
 };
