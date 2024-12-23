@@ -37,7 +37,7 @@ const AddFood = () => {
         }
 
         try {
-            await axios.post("http://localhost:3000/allFood", foodData);
+            await axios.post("http://localhost:3000/allFood", foodData, {withCredentials: true});
             toast.success("Food item added successfully!");
             navigate("/myFood")
         } catch (error) {

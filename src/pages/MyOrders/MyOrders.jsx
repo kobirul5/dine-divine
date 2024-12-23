@@ -16,9 +16,8 @@ const MyOrders = () => {
         // The URL of the API endpoint
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:3000/myOrders/${user?.email}`);
+                const { data } = await axios.get(`http://localhost:3000/myOrders/${user?.email}`, {withCredentials: true});
                 setMyOrders(data);
-                console.log(data)
             } catch (error) {
                 console.log(error)
             }

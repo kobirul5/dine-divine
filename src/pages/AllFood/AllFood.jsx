@@ -7,16 +7,18 @@ import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 
 const AllFood = () => {
-    const [foods, setFoods] = useState()
+    const [foods, setFoods] = useState([])
+    const [search , setSearch] = useState("")
+    console.log(search.toLowerCase())
 
     useEffect(() => {
         // The URL of the API endpoint
         const fetchData = async () => {
             try {
-                const { data } = await axios.get('http://localhost:3000/allFood');
+                const { data } = await axios.get('http://localhost:3000/allFood', { withCredentials: true})
                 setFoods(data);
             } catch (error) {
-                console.log(error)
+                // console.log(error)
             }
         };
         fetchData();
@@ -41,13 +43,15 @@ const AllFood = () => {
             </div>
             <div className="mt-16">
                 <label className="input input-bordered flex items-center gap-2 max-w-[400px]">
-                    <input type="text" className="grow" placeholder="Search" />
-                    <button className=""><FaSearch /></button>
+                    <input onChange={(e)=> setSearch(e.target.value.toLowerCase())} type="text" className="grow" placeholder="Search" />
+                    {/* <button className=""><FaSearch /></button> */}
                 </label>
             </div>
             <section className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10 mb-20 mt-10">
                 {
-                    foods?.map((food, idx) =>
+                    foods?.filter((f)=>{
+                        return search.toLowerCase() === "" ? f : f.foodName.toLowerCase().includes(search)
+                    }).map((food, idx) =>
                         <FoodCard
                             key={idx}
                             food={food}

@@ -13,7 +13,7 @@ const MyFood = () => {
         // The URL of the API endpoint
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:3000/foods/${user?.email}`);
+                const { data } = await axios.get(`http://localhost:3000/foods/${user?.email}`, {withCredentials:true});
                 setFoods(data);
             }
             catch (error) {
