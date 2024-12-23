@@ -3,7 +3,8 @@ import AuthContext from "../../provider/AuthContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleIcon from '../../assets/icons/google.png';
 import toast from "react-hot-toast";
-
+import LoginAnimation from "../../../public/Login.json"
+import Lottie from "lottie-react";
 const Login = () => {
     const {user, signInUser, setUser, handleGoogle } = useContext(AuthContext)
     const navigate = useNavigate()
@@ -37,11 +38,14 @@ const Login = () => {
 
     return (
         <div className="hero bg-base-200 min-h-screen">
-            <div className="hero-content flex-col">
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
+            <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="text-center lg:text-left flex-1">
+                    <h1 className="text-5xl font-bold text-center">Login now!</h1>
+                    <div className="w-full max-w-md">
+                        <Lottie animationData={LoginAnimation} loop={true}></Lottie>
+                    </div>
                 </div>
-                <div className="card bg-base-100 w-full max-w-sm  shrink-0 shadow-2xl">
+                <div className="card bg-base-100 w-full max-w-md  shrink-0 shadow-2xl flex-1">
                     <form onSubmit={handleLogin} className="card-body pb-0">
                         <div className="form-control">
                             <label className="label">

@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import AuthContext from '../../provider/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import Lottie from "lottie-react";
+import RegistrationAnimation from "../../../public/registrason.json"
 
 const Register = () => {
     const { setUser, createUser, setProfileData} = useContext(AuthContext)
@@ -47,9 +49,12 @@ const Register = () => {
 
     return (
         <div className="hero bg-base-200 min-h-screen">
-            <div className="hero-content flex-col">
-                <div className="text-center lg:text-left">
+            <div className="hero-content flex-col lg:flex-row-reverse gap-10">
+                <div className="text-center lg:text-left ">
                     <h1 className="text-5xl font-bold">Sing up now!</h1>
+                    <div className='w-full max-w-md'>
+                        <Lottie animationData={RegistrationAnimation} loop={true}></Lottie>
+                    </div>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form onSubmit={handleRegister} className="card-body pb-0">

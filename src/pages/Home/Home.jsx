@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AuthContext from '../../provider/AuthContext';
+import Banner from './Banner';
 
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
      
     return (
         <div>
-            hello
+            <Banner/>
         </div>
     );
 };
