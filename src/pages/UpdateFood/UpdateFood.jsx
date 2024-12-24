@@ -41,7 +41,7 @@ const UpdateFood = () => {
         }
 
         try {
-            await axios.put(`http://localhost:3000/food/${id}`, foodData);
+            await axios.put(`http://localhost:3000/food/${id}`, foodData, {withCredentials: true});
             toast.success("Food item Update successfully!");
             navigate("/myFood")
         } catch (error) {
@@ -183,8 +183,8 @@ const UpdateFood = () => {
 
                 {/* Add Button */}
                 <div className="form-control md:col-span-2">
-                    <button className="btn btn-primary" type="submit">
-                        Add Item
+                    <button className="btn bg-primaryColor hover:bg-secondaryColor hover:text-primaryColor text-secondaryColor border-none" type="submit">
+                        Update Food
                     </button>
                 </div>
             </form>

@@ -103,7 +103,7 @@ const Register = () => {
                             required />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Sing up</button>
+                            <button className="btn bg-primaryColor hover:bg-secondaryColor hover:text-primaryColor text-secondaryColor border-none">Sing up</button>
                         </div>
                     </form>
                     <div className='px-8 pt-4 pb-8'>

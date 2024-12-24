@@ -43,10 +43,10 @@ const FoodDetails = () => {
                 <p className="text-gray-600  ">
                     <strong>Quantity Available:</strong> {food?.quantity}
                 </p>
-                <p className="font-bold text-gray-600">Purchase Count : 0</p>
+                <p className="font-bold text-gray-600">Purchase Count : {food?.purchaseCount || 0}</p>
                 <p className="text-gray-700 mt-2"> <strong>Description:</strong> {food?.description}</p>
                 <div>
-                    <Link to={`/purchase/${id}`} className="btn">Purchase</Link>
+                    <Link to={`/purchase/${id}`} className="btn bg-primaryColor hover:bg-secondaryColor hover:text-primaryColor text-secondaryColor border-none">Purchase</Link>
                 </div>
             </div>
         </div>

@@ -33,7 +33,8 @@ const AddFood = () => {
             foodOrigin,
             description,
             email,
-            name
+            name,
+            purchaseCount: 0
         }
 
         try {
@@ -172,8 +173,8 @@ const AddFood = () => {
 
                 {/* Add Button */}
                 <div className="form-control md:col-span-2">
-                    <button className="btn btn-primary" type="submit">
-                        Add Item
+                    <button className="btn bg-primaryColor hover:bg-secondaryColor hover:text-primaryColor text-secondaryColor border-none" type="submit">
+                        Add Food
                     </button>
                 </div>
             </form>

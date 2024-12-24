@@ -17,7 +17,7 @@ const MainLayout = () => {
     }
     return (
         <div>
-            <nav className=" text-primaryColor">
+            <nav className=" ">
                 <Navbar></Navbar>
             </nav>
             <Toaster></Toaster>

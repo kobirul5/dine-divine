@@ -57,7 +57,7 @@ const MyOrders = () => {
     }
 
     return (
-        <div>
+        <div className='my-14'>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

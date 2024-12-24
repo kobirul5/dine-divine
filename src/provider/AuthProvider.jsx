@@ -58,15 +58,15 @@ const AuthProvider = ({ children }) => {
                      axios.post("http://localhost:3000/jwt", user, {withCredentials: true})
                      .then((data)=>{
                         console.log(data)
-                        setLoading(false)
                     })
+                    setLoading(false)
                 }
                 else{
                     axios.post("http://localhost:3000/logout", {}, {withCredentials: true})
                      .then((res)=>{
                         console.log("logOut",res.data)
-                        setLoading(false)
-                     })
+                    })
+                    setLoading(false)
                 }
 
             })

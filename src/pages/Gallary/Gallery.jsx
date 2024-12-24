@@ -19,127 +19,129 @@ const Gallery = () => {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className="container mx-auto px-5 sm:px-10 mb-14">
+        <div className=" mb-14">
             <div>
                 <Title
-                title={"Our Gallery"}
-                image = {FoodImage}
-                pageName ={"Gallery"}
+                    title={"Our Gallery"}
+                    image={FoodImage}
+                    pageName={"Gallery"}
                 ></Title>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="container mx-auto px-5 grid grid-cols-1 sm:grid-cols-2 gap-5 lg:grid-cols-3 xl:grid-cols-4">
                 <button onClick={() => setOpen(true)}>
                     {/* <img className="h-[400px] w-[400px] object-cover "  alt="" /> */}
                     <div className="relative w-72 h-72 overflow-hidden">
-                        <img  src={Image1} className="w-full h-full rounded-sm object-cover"/>
-                            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                                 <div className="flex flex-col text-white justify-center items-center">
-                                <span className="text-white text-4xl m-3"><FaSearch /></span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, saepe.</p>
-                                </div>
-                               
-                            </div>
-                    </div>
-                </button>
-                <button onClick={() => setOpen(true)}>
-                    {/* <img className="h-[400px] w-[400px] object-cover "  alt="" /> */}
-                    <div className="relative w-72 h-72 overflow-hidden">
-                        <img  src={Image2} className="w-full h-full rounded-sm object-cover"/>
-                            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                        <img src={Image1} className="w-full h-full rounded-sm object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                             <div className="flex flex-col text-white justify-center items-center">
                                 <span className="text-white text-4xl m-3"><FaSearch /></span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, saepe.</p>
-                                </div>
+                                <p>A cozy spot offering gourmet comfort food with a modern twist. Known for its artisan soups and freshly baked bread.</p>
                             </div>
+
+                        </div>
                     </div>
                 </button>
                 <button onClick={() => setOpen(true)}>
                     {/* <img className="h-[400px] w-[400px] object-cover "  alt="" /> */}
                     <div className="relative w-72 h-72 overflow-hidden">
-                        <img  src={Image3} className="w-full h-full rounded-sm object-cover"/>
-                            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                                 <div className="flex flex-col text-white justify-center items-center">
+                        <img src={Image2} className="w-full h-full rounded-sm object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                            <div className="flex flex-col text-white justify-center items-center">
                                 <span className="text-white text-4xl m-3"><FaSearch /></span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, saepe.</p>
-                                </div>
+                                <p>A seafood haven featuring fresh catches of the day, sustainable sushi rolls, and coastal-inspired cocktails.</p>
                             </div>
+                        </div>
+                    </div>
+                </button>
+                <button onClick={() => setOpen(true)}>
+                    {/* <img className="h-[400px] w-[400px] object-cover "  alt="" /> */}
+                    <div className="relative w-72 h-72 overflow-hidden">
+                        <img src={Image3} className="w-full h-full rounded-sm object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                            <div className="flex flex-col text-white justify-center items-center">
+                                <span className="text-white text-4xl m-3"><FaSearch /></span>
+                                <p>A Latin-inspired grill serving sizzling fajitas, flavorful empanadas, and vibrant mojitos.</p>
+                            </div>
+                        </div>
                     </div>
                 </button>
                 <button onClick={() => setOpen(true)}>
                     <div className="relative w-72 h-72 overflow-hidden">
-                        <img  src={Image4} className="w-full h-full rounded-sm object-cover"/>
-                            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                                 <div className="flex flex-col text-white justify-center items-center">
+                        <img src={Image4} className="w-full h-full rounded-sm object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                            <div className="flex flex-col text-white justify-center items-center">
                                 <span className="text-white text-4xl m-3"><FaSearch /></span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, saepe.</p>
-                                </div>
+                                <p>An Asian street-food-inspired eatery featuring noodle bowls, dumplings, and bubble teas.
+                                </p>
                             </div>
+                        </div>
                     </div>
                 </button>
                 <button onClick={() => setOpen(true)}>
                     <div className="relative w-72 h-72 overflow-hidden">
-                        <img  src={Image5} className="w-full h-full rounded-sm object-cover"/>
-                            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                                 <div className="flex flex-col text-white justify-center items-center">
+                        <img src={Image5} className="w-full h-full rounded-sm object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                            <div className="flex flex-col text-white justify-center items-center">
                                 <span className="text-white text-4xl m-3"><FaSearch /></span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, saepe.</p>
-                                </div>
+                                <p>An Asian street-food-inspired eatery featuring noodle bowls, dumplings, and bubble teas.
+                                </p>
                             </div>
+                        </div>
                     </div>
                 </button>
                 <button onClick={() => setOpen(true)}>
                     <div className="relative w-72 h-72 overflow-hidden">
-                        <img  src={Image6} className="w-full h-full rounded-sm object-cover"/>
-                            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                                 <div className="flex flex-col text-white justify-center items-center">
+                        <img src={Image6} className="w-full h-full rounded-sm object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                            <div className="flex flex-col text-white justify-center items-center">
                                 <span className="text-white text-4xl m-3"><FaSearch /></span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, saepe.</p>
-                                </div>
+                                <p>A tranquil restaurant offering a menu of fresh, creative vegan and vegetarian dishes.</p>
                             </div>
+                        </div>
                     </div>
                 </button>
                 <button onClick={() => setOpen(true)}>
                     <div className="relative w-72 h-72 overflow-hidden">
-                        <img  src={Image7} className="w-full h-full rounded-sm object-cover"/>
-                            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                                 <div className="flex flex-col text-white justify-center items-center">
+                        <img src={Image7} className="w-full h-full rounded-sm object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                            <div className="flex flex-col text-white justify-center items-center">
                                 <span className="text-white text-4xl m-3"><FaSearch /></span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, saepe.</p>
-                                </div>
+                                <p>A tranquil restaurant offering a menu of fresh, creative vegan and vegetarian dishes.</p>
                             </div>
+                        </div>
                     </div>
                 </button>
                 <button onClick={() => setOpen(true)}>
                     <div className="relative w-72 h-72 overflow-hidden">
-                        <img  src={Image8} className="w-full h-full rounded-sm object-cover"/>
-                            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                                 <div className="flex flex-col text-white justify-center items-center">
+                        <img src={Image8} className="w-full h-full rounded-sm object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                            <div className="flex flex-col text-white justify-center items-center">
                                 <span className="text-white text-4xl m-3"><FaSearch /></span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, saepe.</p>
-                                </div>
+                                <p>A tranquil restaurant offering a menu of fresh, creative vegan and vegetarian dishes.</p>
                             </div>
+                        </div>
                     </div>
                 </button>
                 <button onClick={() => setOpen(true)}>
                     <div className="relative w-72 h-72 overflow-hidden">
-                        <img  src={Image9} className="w-full h-full rounded-sm object-cover"/>
-                            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                                 <div className="flex flex-col text-white justify-center items-center">
+                        <img src={Image9} className="w-full h-full rounded-sm object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                            <div className="flex flex-col text-white justify-center items-center">
                                 <span className="text-white text-4xl m-3"><FaSearch /></span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, saepe.</p>
-                                </div>
+                                <p>A tranquil restaurant offering a menu of fresh, creative vegan and vegetarian dishes.</p>
                             </div>
+                        </div>
                     </div>
                 </button>
                 <button onClick={() => setOpen(true)}>
                     <div className="relative w-72 h-72 overflow-hidden">
-                        <img  src={Image10} className="w-full h-full rounded-sm object-cover"/>
-                            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                                 <div className="flex flex-col text-white justify-center items-center">
+                        <img src={Image10} className="w-full h-full rounded-sm object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                            <div className="flex flex-col text-white justify-center items-center">
                                 <span className="text-white text-4xl m-3"><FaSearch /></span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, saepe.</p>
-                                </div>
+                                <p>A tranquil restaurant offering a menu of fresh, creative vegan and vegetarian dishes.</p>
                             </div>
+                        </div>
                     </div>
                 </button>
             </div>

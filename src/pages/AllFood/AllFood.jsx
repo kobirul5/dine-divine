@@ -24,7 +24,7 @@ const AllFood = () => {
         fetchData();
     }, []);
     return (
-        <div className="container mx-auto px-5 md:px-10">
+        <div className="">
             <div
                 className="hero min-h-[300px]"
                 style={{
@@ -41,13 +41,13 @@ const AllFood = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-16">
+            <div className="mt-16 container mx-auto px-4 ">
                 <label className="input input-bordered flex items-center gap-2 max-w-[400px]">
                     <input onChange={(e)=> setSearch(e.target.value.toLowerCase())} type="text" className="grow" placeholder="Search" />
                     {/* <button className=""><FaSearch /></button> */}
                 </label>
             </div>
-            <section className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10 mb-20 mt-10">
+            <section className=" container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10 mb-20 mt-10">
                 {
                     foods?.filter((f)=>{
                         return search.toLowerCase() === "" ? f : f.foodName.toLowerCase().includes(search)

@@ -58,7 +58,7 @@ const HappyClient = () => {
 
 
     return (
-        <div className="my-10">
+        <div className="my-10 container mx-auto px-4 md:px-10">
             <div className="flex flex-col justify-center items-center text-center">
                 <p className="text-primaryColor">Happy Client</p>
                 <h1 className="text-3xl md:text-5xl font-bold">What's Our Customer Say</h1>
@@ -83,10 +83,10 @@ const HappyClient = () => {
                 >
                     {
                         reviewsClient.map((review, idx) => <SwiperSlide key={idx} >
-                            <div className="card bg-base-100 w-80 xl:w-96 shadow-xl">
+                            <div className="card bg-base-100 w-80 xl:w-96 shadow-xl border border-primaryColor">
                                 <div className="card-body items-center text-center">
                                     <h2 className="card-title text-xl font-bold">{review.name}</h2>
-                                    <h2 className='text-lg font-bold'>{review.profession}</h2>
+                                    <h2 className=' font-semibold'>{review.profession}</h2>
                                     <p>{review.review}</p>
                                    <div className='flex gap-1'>
                                    <FaStar />

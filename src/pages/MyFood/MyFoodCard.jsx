@@ -13,8 +13,8 @@ const MyFoodCard = ({ food }) => {
             <div className='flex flex-col md:flex-row md:justify-between gap-5 flex-grow'>
                 <div>
                     <h1 className='text-3xl font-bold'>{foodName}</h1>
-                    <p className='text-2xl'>price: ${price}</p>
-                    <p className='text-2xl'>FoodCategory: {foodCategory}</p>
+                    <p className='text-2xl'><strong>Price:</strong> ${price}</p>
+                    <p className='text-2xl'><strong>FoodCategory:</strong> {foodCategory}</p>
                     
                 </div>
                 <div className='flex md:flex-col gap-5 text-2xl'>

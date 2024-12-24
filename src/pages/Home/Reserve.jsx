@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReserveImag from "../../assets/img/room.jpg"
 import FoodImag from "../../assets/img/food.jpg"
+import { motion} from "motion/react"
 const Reserve = () => {
+   const scrollRef = useRef(null)
     return (
         <div
-            className="hero min-h-screen my-14"
+            className="hero min-h-screen my-14 "
             style={{
                 backgroundImage: `url(${ReserveImag})`,
             }}>
-            <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content p-10  text-center md:max-w-[80%] lg:max-w-[1000px]">
-                <div className="flex flex-col lg:flex-row items-center justify-center p-6 gap-8 bg-white ">
+            <div className="hero-overlay bg-opacity-70"></div>
+            <div className="hero-content  text-center  md:max-w-[80%] lg:max-w-[1000px] xl:max-w-[1200px] ">
+                <div className=" container mx-auto flex flex-col lg:flex-row items-center justify-center md:p-6 gap-8 bg-white border border-primaryColor">
                     {/* Promo Card */}
-                    <div className="card w-full flex-1  rounded-lg p-4">
+                    <motion.div
+                    animate={{
+                        x: [-200, 0],
+                        opacity: [0,1],
+                    }}
+                    transition={{duration:3, delay:1, }}
+                    viewport={{ root: scrollRef }}
+                     className="card w-full flex-1  rounded-lg p-4">
                         <div className="relative">
                             <img
                                 src={FoodImag}
@@ -22,16 +31,16 @@ const Reserve = () => {
                             <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex flex-col justify-center items-center">
                                 <h2 className="text-white text-4xl font-bold">30% Off</h2>
                                 <p className="text-white mt-2">Online reservation only</p>
-                                <button className="btn bg-primaryColor  hover:bg-primaryColor text-white mt-4">Book Now</button>
+                                <button className="btn bg-primaryColor hover:bg-secondaryColor hover:text-primaryColor text-secondaryColor border-none mt-4">Book Now</button>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Reservation Form */}
                     <div className="card w-full lg:w-1/2 rounded-lg p-6">
-                        <h2 className="text-2xl text-pr text-primaryColor font-bold text-center mb-4">Online Reservation</h2>
+                        <h2 className="text-2xl md:text-4xl text-pr text-primaryColor font-bold text-center mb-4">Online Reservation</h2>
                         <p className="text-center text-black mb-6">
-                            Booking request: +84 (800) 1433 555 or fill out the order form
+                            Booking request: +088 01958545441 or fill out the order form
                         </p>
                         <form className="space-y-4">
                             {/* Name and Phone */}
@@ -77,7 +86,7 @@ const Reserve = () => {
                             ></textarea>
 
                             {/* Submit Button */}
-                            <button className="btn bg-primaryColor  hover:bg-primaryColor text-white w-full">Book a Table</button>
+                            <button className="btn bg-primaryColor hover:bg-secondaryColor hover:text-primaryColor text-secondaryColor border-none w-full">Book a Table</button>
                         </form>
                     </div>
                 </div>
