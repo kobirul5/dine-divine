@@ -3,6 +3,7 @@ import AuthContext from '../../provider/AuthContext';
 import Banner from './Banner';
 import TopFood from './TopFood';
 import HappyClient from './HappyClient';
+import Reserve from './Reserve';
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner/>
             <TopFood></TopFood>
             <HappyClient></HappyClient>
+            <Reserve></Reserve>
         </div>
     );
 };
