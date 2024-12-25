@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+
 import { FaStar } from "react-icons/fa";
 const HappyClient = () => {
 
@@ -67,8 +68,12 @@ const HappyClient = () => {
                 <Swiper
                     spaceBetween={50}
                     slidesPerView={1}
-                    // onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    onSlideChange={() => {/*..console.log('slide change'*/}} 
+                    onSwiper={(swiper) =>{/*..console.log('slide change'*/}}
+                    autopla={{
+                        delay: 3000,
+                        disableOnInteraction: false, 
+                    }}
                     breakpoints={{
                         640: {
                             slidesPerView: 1, 
