@@ -4,6 +4,7 @@ import Banner from './Banner';
 import TopFood from './TopFood';
 import HappyClient from './HappyClient';
 import Reserve from './Reserve';
+import Welcome from './Welcome';
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
     return (
         <div>
             <Banner/>
+            <Welcome></Welcome>
             <TopFood></TopFood>
             <HappyClient></HappyClient>
             <Reserve></Reserve>

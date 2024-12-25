@@ -11,7 +11,6 @@ const UpdateFood = () => {
     const {id} = useParams()
     const food = useLoaderData()
     const { _id,  foodName, foodImage, foodCategory, quantity, price, foodOrigin, description,} = food
- console.log(food, user)
 
     const handleSubmit = async (e) => {
         e.preventDefault();

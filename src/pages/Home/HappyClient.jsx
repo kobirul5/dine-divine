@@ -1,6 +1,13 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { Navigation, Pagination, Autoplay, Scrollbar, A11y } from 'swiper/modules';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
 import { FaStar } from "react-icons/fa";
 const HappyClient = () => {
 
@@ -66,23 +73,28 @@ const HappyClient = () => {
             </div>
             <section className='my-10 mx-auto'>
                 <Swiper
+
+                    modules={[Navigation, Pagination, Scrollbar, Autoplay, A11y]}
                     spaceBetween={50}
                     slidesPerView={1}
-                    onSlideChange={() => {/*..console.log('slide change'*/}} 
-                    onSwiper={(swiper) =>{/*..console.log('slide change'*/}}
-                    autopla={{
-                        delay: 3000,
-                        disableOnInteraction: false, 
+                    navigation
+                    pagination={{ clickable: true }}
+                    scrollbar={{ draggable: true }}
+                    onSwiper={(swiper) => {/*console.log(swiper)*/}}
+                    onSlideChange={() => {/*console.log('slide change')*/}}
+                    autoplay={{
+                        delay:2000
                     }}
+
                     breakpoints={{
                         640: {
-                            slidesPerView: 1, 
+                            slidesPerView: 1,
                         },
                         768: {
-                            slidesPerView: 2, 
+                            slidesPerView: 2,
                         },
                         1024: {
-                            slidesPerView: 3, 
+                            slidesPerView: 3,
                         },
                     }}
                 >
@@ -93,13 +105,13 @@ const HappyClient = () => {
                                     <h2 className="card-title text-xl font-bold">{review.name}</h2>
                                     <h2 className=' font-semibold'>{review.profession}</h2>
                                     <p>{review.review}</p>
-                                   <div className='flex gap-1'>
-                                   <FaStar />
-                                   <FaStar />
-                                   <FaStar />
-                                   <FaStar />
-                                   <FaStar />
-                                   </div>
+                                    <div className='flex gap-1'>
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                    </div>
                                 </div>
                             </div>
                         </SwiperSlide>)

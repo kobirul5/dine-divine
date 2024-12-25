@@ -17,7 +17,7 @@ const MyFood = () => {
                 setFoods(data);
             }
             catch (error) {
-                console.log(error)
+                
             }
         };
         fetchData();

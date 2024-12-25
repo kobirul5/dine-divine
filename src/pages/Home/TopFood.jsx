@@ -21,7 +21,10 @@ const TopFood = () => {
 
     return (
         <div className="my-14 container mx-auto px-5">
+            <div>
             <h1 className="text-3xl md:text-4xl text-center font-bold">Our Top Foods</h1>
+            <p className="mx-auto text-center mt-5 md: w-8/12 ">Experience the magic of our best-selling dishes, each crafted with care and precision to delight your senses. Loved by our guests, these signature creations combine fresh, high-quality ingredients with flavors that leave a lasting impression, perfect for every special moment.</p>
+            </div>
             
             <section className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10 mb-5 mt-10">
                 {

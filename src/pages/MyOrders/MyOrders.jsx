@@ -19,7 +19,7 @@ const MyOrders = () => {
                 const { data } = await axios.get(`https://assignment-11-server-neon-eta.vercel.app/myOrders/${user?.email}`, {withCredentials: true});
                 setMyOrders(data);
             } catch (error) {
-                console.log(error)
+                
             }
         };
         fetchData();
@@ -51,7 +51,7 @@ const MyOrders = () => {
             setMyOrders(filterData)
             toast("Delete Successfully")
         } catch (error) {
-            console.log(error)
+            
         }
 
     }

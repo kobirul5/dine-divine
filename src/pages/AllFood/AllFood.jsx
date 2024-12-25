@@ -9,8 +9,6 @@ import { FaSearch } from "react-icons/fa";
 const AllFood = () => {
     const [foods, setFoods] = useState([])
     const [search , setSearch] = useState("")
-    console.log(search.toLowerCase())
-
     useEffect(() => {
         // The URL of the API endpoint
         const fetchData = async () => {
@@ -18,7 +16,6 @@ const AllFood = () => {
                 const { data } = await axios.get('https://assignment-11-server-neon-eta.vercel.app/allFood', { withCredentials: true})
                 setFoods(data);
             } catch (error) {
-                // console.log(error)
             }
         };
         fetchData();

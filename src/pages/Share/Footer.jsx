@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa6';
 
 const Footer = () => {
     return (
@@ -29,7 +30,7 @@ const Footer = () => {
                   <div>
                     <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
                     <ul className="space-y-2">
-                      <li><span className="font-medium">Address:</span> 123 Food Street, Gourmet City</li>
+                      <li><span className="font-medium">Address:</span> 123 Food Street, Dhaka City</li>
                       <li>
                         <span className="font-medium">Phone:</span>{' '}
                         <a href="tel:+1234567890" className="hover:text-yellow-500">+1 234 567 890</a>
@@ -56,16 +57,16 @@ const Footer = () => {
                 <div className="mt-10 border-t border-gray-700 pt-6 text-center">
                   <div className="flex justify-center space-x-6 mb-4">
                     <a href="#" className="hover:text-yellow-500">
-                      <i className="fab fa-facebook-f"></i> {/* Facebook */}
+                      <FaFacebook/> {/* Facebook */}
                     </a>
                     <a href="#" className="hover:text-yellow-500">
-                      <i className="fab fa-twitter"></i> {/* Twitter */}
+                      <FaTwitter/> {/* Twitter */}
                     </a>
                     <a href="#" className="hover:text-yellow-500">
-                      <i className="fab fa-instagram"></i> {/* Instagram */}
+                      <FaInstagram></FaInstagram> {/* Instagram */}
                     </a>
                     <a href="#" className="hover:text-yellow-500">
-                      <i className="fab fa-youtube"></i> {/* YouTube */}
+                      <FaYoutube/> {/* YouTube */}
                     </a>
                   </div>
                   <p className="text-sm">

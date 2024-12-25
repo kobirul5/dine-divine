@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
-import BannerImage from "../../assets/img/allFood.jpg"
-import { animate, easeInOut, motion, spring } from "motion/react"
+import BannerImage from "../../assets/img/Banner.jpg"
+import {motion, } from "motion/react"
+
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+
 const Banner = () => {
 
     const awardVariant = {
@@ -10,11 +17,13 @@ const Banner = () => {
         },
         animate: {
             y: 0,
-            opacity: 1
+            opacity: 1,
+            
         },
         transition: {
             duration: 1,
-            staggerChildren: 0.2
+            staggerChildren: 0.2,
+            
         }
     }
     return (

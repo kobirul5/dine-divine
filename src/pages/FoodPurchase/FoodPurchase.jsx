@@ -50,7 +50,6 @@ const FoodPurchase = () => {
     const handleQuantityUpdate = () =>{
         setAvailableFood(availableFood - foodQuantity)
     }
-    console.log(food)
     return (
         <div className="container mx-auto p-6  shadow rounded-lg">
             <h1 className="text-3xl md:text-5xl text-center font-bold mb-8">Food Purchase</h1>
