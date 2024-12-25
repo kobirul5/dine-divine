@@ -17,7 +17,7 @@ const MainLayout = () => {
     }
     return (
         <div>
-            <nav className=" ">
+            <nav className="poppins">
                 <Navbar></Navbar>
             </nav>
             <Toaster></Toaster>

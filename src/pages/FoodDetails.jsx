@@ -9,7 +9,7 @@ const FoodDetails = () => {
         // The URL of the API endpoint
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:3000/food/${id}`);
+                const { data } = await axios.get(`https://assignment-11-server-neon-eta.vercel.app/food/${id}`);
                 setFood(data);
                 console.log(data)
             } catch (error) {

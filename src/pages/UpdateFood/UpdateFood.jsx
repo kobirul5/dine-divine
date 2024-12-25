@@ -41,7 +41,7 @@ const UpdateFood = () => {
         }
 
         try {
-            await axios.put(`http://localhost:3000/food/${id}`, foodData, {withCredentials: true});
+            await axios.put(`https://assignment-11-server-neon-eta.vercel.app/food/${id}`, foodData, {withCredentials: true});
             toast.success("Food item Update successfully!");
             navigate("/myFood")
         } catch (error) {

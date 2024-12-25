@@ -16,7 +16,7 @@ const MyOrders = () => {
         // The URL of the API endpoint
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:3000/myOrders/${user?.email}`, {withCredentials: true});
+                const { data } = await axios.get(`https://assignment-11-server-neon-eta.vercel.app/myOrders/${user?.email}`, {withCredentials: true});
                 setMyOrders(data);
             } catch (error) {
                 console.log(error)
@@ -46,7 +46,7 @@ const MyOrders = () => {
     const handleDelete = async(id) => {
 
         try {
-            const { data } = await axios.delete(`http://localhost:3000/myOrders/${id}`);
+            const { data } = await axios.delete(`https://assignment-11-server-neon-eta.vercel.app/myOrders/${id}`);
             const filterData = myOrders.filter((d)=>d._id !== id)
             setMyOrders(filterData)
             toast("Delete Successfully")

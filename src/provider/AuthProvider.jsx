@@ -55,14 +55,14 @@ const AuthProvider = ({ children }) => {
 
                 if(currentUser?.email){
                     const user = {email: currentUser.email}
-                     axios.post("http://localhost:3000/jwt", user, {withCredentials: true})
+                     axios.post("https://assignment-11-server-neon-eta.vercel.app/jwt", user, {withCredentials: true})
                      .then((data)=>{
                         console.log(data)
                     })
                     setLoading(false)
                 }
                 else{
-                    axios.post("http://localhost:3000/logout", {}, {withCredentials: true})
+                    axios.post("https://assignment-11-server-neon-eta.vercel.app/logout", {}, {withCredentials: true})
                      .then((res)=>{
                         console.log("logOut",res.data)
                     })

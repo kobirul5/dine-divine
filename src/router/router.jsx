@@ -54,12 +54,12 @@ const router = createBrowserRouter([
             {
                 path: "/updateFood/:id",
                 element: <UpdateFood></UpdateFood>,
-                loader: ({params})=> fetch(`http://localhost:3000/food/${params.id}`)
+                loader: ({params})=> fetch(`https://assignment-11-server-neon-eta.vercel.app/food/${params.id}`)
             },
             {
                 path:"/purchase/:id",
                 element: <FoodPurchasePri><FoodPurchase></FoodPurchase></FoodPurchasePri>,
-                loader: ({params})=> fetch(`http://localhost:3000/food/${params.id}`)
+                loader: ({params})=> fetch(`https://assignment-11-server-neon-eta.vercel.app/food/${params.id}`)
             }
         ]
     },

@@ -1,14 +1,18 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const FoodCard = ({food}) => {
-    const {_id, foodName, foodImage, foodCategory, quantity, price, foodOrigin, description, email, name
+    const {_id, foodName, foodImage, foodCategory, purchaseCount, quantity, price, foodOrigin, description, email, name
     } = food
+    const location = useLocation()
     return (
         <div className="card  bg-base-100 shadow-xl ">
             <figure><img src={foodImage} alt={foodName} className="w-full h-56 object-cover" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{foodName}</h2>
+                {
+                    location.pathname === "/" && <p> <strong>Purchase Count:-</strong> {purchaseCount}</p>
+                }
                 <p>{description.slice(0,40)}...</p>
                 <div className="card-actions justify-between items-center">
                     <p className="text-xl font-semibold text-green-600">{`$${price}`}</p>

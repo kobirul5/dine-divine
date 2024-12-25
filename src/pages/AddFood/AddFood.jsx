@@ -38,7 +38,7 @@ const AddFood = () => {
         }
 
         try {
-            await axios.post("http://localhost:3000/allFood", foodData, {withCredentials: true});
+            await axios.post("https://assignment-11-server-neon-eta.vercel.app/allFood", foodData, {withCredentials: true});
             toast.success("Food item added successfully!");
             navigate("/myFood")
         } catch (error) {

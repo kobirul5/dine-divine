@@ -8,7 +8,7 @@ const FoodPurchase = () => {
     const { user } = useContext(AuthContext)
     const food = useLoaderData()
     const [foodPrice, setFoodPrice] = useState(food.price);
-    const [foodQuantity, setFoodQuantity] = useState();
+    const [foodQuantity, setFoodQuantity] = useState(1);
     const [availableFood, setAvailableFood] = useState(food.quantity)
     const navigate = useNavigate()
 
@@ -36,7 +36,7 @@ const FoodPurchase = () => {
 
         // Send data to the database (API call or database integration)
         try {
-            await axios.post("http://localhost:3000/foodPurchase", purchaseData);
+            await axios.post("https://assignment-11-server-neon-eta.vercel.app/foodPurchase", purchaseData);
             toast.success("Food item Purchase successfully!");
             // navigate("/myOrders")
             handleQuantityUpdate()
