@@ -57,7 +57,7 @@ const MyOrders = () => {
     }
 
     return (
-        <div className='my-14'>
+        <div className='my-14 container mx-auto px-4'>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -81,7 +81,7 @@ const MyOrders = () => {
                                 <td>{order?.foodName}</td>
                                 <td>{order?.buyerName}</td>
                                 <td>{format(order?.buyingDate, "dd/MM/yyyy")}</td>
-                                <td><button onClick={()=>modernDelete(order?._id)}><FaTrash /></button></td>
+                                <td><button className='text-red-500 text-2xl' onClick={()=>modernDelete(order?._id)}><FaTrash /></button></td>
                             </tr>
                             )
                         }
