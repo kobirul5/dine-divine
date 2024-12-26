@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Title = ({title, image, pageName}) => {
     return (
              <div
-                className="hero min-h-[300px] mb-14"
+                className="hero min-h-[400px] mb-14"
                 style={{
                     backgroundImage: `url(${image})`,
                 }}>

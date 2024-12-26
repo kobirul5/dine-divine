@@ -23,7 +23,7 @@ const AllFood = () => {
     return (
         <div className="">
             <div
-                className="hero min-h-[300px]"
+                className="hero min-h-[400px]"
                 style={{
                     backgroundImage: `url(${FoodImage})`,
                 }}>

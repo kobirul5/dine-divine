@@ -23,7 +23,7 @@ const Navbar = () => {
         <li><NavLink to="/gallery" className='btn nav-btn hover:bg-secondaryColor hover:text-primaryColor text-primaryColor'>Gallery</NavLink></li>
     </>
     return (
-        <div className="navbar bg-none backdrop-blur-sm static top-0">
+        <div className="navbar bg-none backdrop-blur-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn nav-btn p-1 text-primaryColor  lg:hidden">
@@ -91,7 +91,7 @@ const Navbar = () => {
                         <Link to="/auth/login" className="btn text-primaryColor border-primaryColor hover:bg-secondaryColor">Login</Link>
                 }
                 {/* dropdown profile option */}
-                <div className={`dropdown dropdown-end z-10 ${!user?.email && "hidden"}`}>
+                <div className={`dropdown dropdown-end z-90 ${!user?.email && "hidden"}`}>
                     <div tabIndex={0} role="button" className="btn btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img

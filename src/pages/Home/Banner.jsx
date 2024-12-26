@@ -28,7 +28,7 @@ const Banner = () => {
         }
     }
     return (
-        <div >
+        <div  className="z-0">
             <motion.div
                 className="hero min-h-screen box relative"
                 style={{

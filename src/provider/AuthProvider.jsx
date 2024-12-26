@@ -64,7 +64,6 @@ const AuthProvider = ({ children }) => {
                     axios.post("https://assignment-11-server-neon-eta.vercel.app/logout", {}, {withCredentials: true})
                      .then((res)=>{
                          setLoading(false)
-                        
                     })
                 }
 
@@ -72,7 +71,7 @@ const AuthProvider = ({ children }) => {
             return () => {
                 unsubscribe()
             }
-        }, [user, setUser])
+        }, [setUser])
 
         const authInfo = {
             user,

@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../pages/Share/Navbar";
 import Footer from "../pages/Share/Footer";
 import { Toaster } from 'react-hot-toast';
@@ -9,6 +9,7 @@ import Spinner from "../pages/Share/Spinner";
 
 const MainLayout = () => {
     const { loading, } = useContext(AuthContext)
+    const location = useLocation()
 
 
 
@@ -16,8 +17,8 @@ const MainLayout = () => {
         return <Spinner></Spinner>
     }
     return (
-        <div>
-            <nav className="poppins">
+        <div className="relative">
+            <nav className={`${location.pathname == "/" || location.pathname === "/allFood" || location.pathname === "/gallery" ? "absolute w-full z-10 border-b border-primaryColor": "h-16 bg-white"}`}>
                 <Navbar></Navbar>
             </nav>
             <Toaster></Toaster>
