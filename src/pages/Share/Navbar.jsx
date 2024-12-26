@@ -101,7 +101,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-primaryColor rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-primaryColor rounded-box mt-3 w-52 z-30 p-2 shadow">
                         <li><NavLink to="/myFood" state={user?.email}>My Foods</NavLink></li>
                         <li><NavLink to="/addFood" >Add food</NavLink></li>
                         <li><NavLink to="/myOrders" >My Orders</NavLink></li>
