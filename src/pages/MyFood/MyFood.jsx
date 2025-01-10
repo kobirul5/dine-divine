@@ -13,11 +13,11 @@ const MyFood = () => {
         // The URL of the API endpoint
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`https://assignment-11-server-neon-eta.vercel.app/foods/${user?.email}`, {withCredentials:true});
+                const { data } = await axios.get(`https://assignment-11-server-neon-eta.vercel.app/foods/${user?.email}`, { withCredentials: true });
                 setFoods(data);
             }
             catch (error) {
-                
+
             }
         };
         fetchData();
@@ -28,15 +28,38 @@ const MyFood = () => {
     }
     return (
         <div className="container mx-auto px-5 md:px-10 my-10">
+            {
+                !foods.length > 0 ? <> <h2 className="text-3xl md:text-5xl text-primaryColor font-bold text-center">Your are not Add any Food Item</h2></>
+                    :
+                    <div className="overflow-x-auto">
 
-            <div className="max-w-[80%] mx-auto">
-                {
-                    foods?.map((food, idx) => <MyFoodCard
-                        key={idx}
-                        food={food}
-                    ></MyFoodCard>)
-                }
-            </div>
+                        <table className="table table-zebra">
+                            {/* head */}
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {/* row 1 */}
+
+                                {
+                                    foods?.map((food, idx) => <MyFoodCard
+                                        key={idx}
+                                        food={food}
+                                        idx={idx}
+                                    ></MyFoodCard>)
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </div>
+            }
         </div>
     );
 };
