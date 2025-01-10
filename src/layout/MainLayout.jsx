@@ -18,7 +18,7 @@ const MainLayout = () => {
     // }
     return (
         <div className="">
-            <nav className={`border-b sticky top-0 z-10 border-primaryColor bg-white bg-opacity-70 backdrop-blur-sm`}>
+            <nav className={`border-b sticky top-0 z-10 border-primaryColor bg-white bg-opacity-70 backdrop-blur-md`}>
                 <Navbar></Navbar>
             </nav>
             <Toaster></Toaster>
