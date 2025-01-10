@@ -28,7 +28,44 @@ Dine Divine is a visually appealing and interactive website for a restaurant. Th
 - **Tailwind CSS**: For responsive and modern styling.
 - **DaysiUI**: For responsive and modern styling.
 - **Firebase**: For authentication and deployment.
+
+
 - **MongoDB**: As a Database.
+## Dependencies
+    "axios": "^1.7.9",
+    "date-fns": "^4.1.0",
+    "firebase": "^11.1.0",
+    "localforage": "^1.10.0",
+    "lottie-react": "^2.4.0",
+    "match-sorter": "^8.0.0",
+    "motion": "^11.15.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.4.0",
+    "react-rating": "^2.0.5",
+    "react-router-dom": "^7.1.0",
+    "react-spinners": "^0.15.0",
+    "react-star-ratings": "^2.3.0",
+    "sort-by": "^1.2.0",
+    "swiper": "^11.1.15",
+    "yet-another-react-lightbox": "^3.21.7"
+
+## Dev Dependencies 
+    "@eslint/js": "^9.17.0",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.22",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.13.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.3"
 
 ## Deployment
 The project is deployed on Firebase Hosting for fast and reliable access. To deploy updates, use the following commands:
