@@ -29,7 +29,7 @@ const Banner = () => {
     return (
         <div className="z-0">
             <motion.div
-                className="hero h-[550px] box "
+                className="hero h-[500px] box "
                 style={{
                     backgroundImage: `url(${BannerImage})`,
                 }}>

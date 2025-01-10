@@ -15,7 +15,7 @@ const FoodCard = ({food}) => {
                 }
                 <p>{description.slice(0,40)}...</p>
                 <div className="card-actions justify-between items-center">
-                    <p className="text-xl font-semibold text-green-600">{`$${price}`}</p>
+                    <p className="text-xl  text-primaryColor font-bold">{`$${price}`}</p>
                     <Link to={`/foodDetails/${_id}`} className="btn bg-primaryColor hover:bg-secondaryColor hover:text-primaryColor text-secondaryColor border-none font-bold ">See Details</Link>
                 </div>
             </div>
