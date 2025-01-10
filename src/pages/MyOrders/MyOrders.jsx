@@ -64,10 +64,11 @@ const MyOrders = () => {
                     <thead>
                         <tr>
                             <th></th>
+                            <th>Food Image</th>
                             <th>Food Name</th>
                             <th>Owner Name</th>
                             <th>Buying Time</th>
-                            <th></th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -76,7 +77,7 @@ const MyOrders = () => {
                             myOrders?.map((order, idx) => <tr
                                 key={idx}
 
-                            >
+                            >   <th>{idx+1}</th>
                                 <th><img className='w-20' src={order.foodImage} alt="" /></th>
                                 <td>{order?.foodName}</td>
                                 <td>{order?.buyerName}</td>
