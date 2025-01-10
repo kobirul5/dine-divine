@@ -26,7 +26,7 @@ const TopFood = () => {
             <p className="mx-auto text-center mt-5 md: w-8/12 ">Experience the magic of our best-selling dishes, each crafted with care and precision to delight your senses. Loved by our guests, these signature creations combine fresh, high-quality ingredients with flavors that leave a lasting impression, perfect for every special moment.</p>
             </div>
             
-            <section className="grid grid-cols-1 md:grid-cols-3  gap-10 mb-5 mt-10">
+            <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4  gap-10 mb-5 mt-10">
                 {
                     foods?.map((food, idx) =>
                         <FoodCard

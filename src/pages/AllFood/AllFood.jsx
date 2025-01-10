@@ -30,7 +30,7 @@ const AllFood = () => {
                 <div className="hero-overlay bg-opacity-85 "></div>
                 <div className="hero-content text-neutral-content text-center">
                     <div className="max-w-md text-white">
-                        <h1 className="mb-5 text-5xl font-bold ">Hello there</h1>
+                        <h1 className="mb-5 text-5xl font-bold ">Our All Foods</h1>
                         <div className="flex justify-center items-center gap-4">
                             <Link to="/">Home</Link> ||
                             <Link className="text-[#dab44d]">All Foods</Link>

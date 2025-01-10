@@ -27,55 +27,59 @@ const Banner = () => {
         }
     }
     return (
-        <div  className="z-0">
+        <div className="z-0">
             <motion.div
-                className="hero h-[500px] box "
+                className="hero h-[550px] box "
                 style={{
                     backgroundImage: `url(${BannerImage})`,
                 }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 {/* banner card */}
-                <motion.div
-                    animate={{
-                        // x:[-50, 900, -50],
-                        y: [-120, 120, -120],
-                        rotate: 360
+                <div className="container mx-auto relative">
 
-                    }}
-                    transition={{
-                        repeat: Infinity,
-                        repeatType: "loop", // Can be "reverse" or "loop"
-                        duration: 10, // Duration of one rotation (in seconds)
-                        ease: "linear", // Smooth linear rotation
-                    }}
-                    className="absolute left-20 hidden md:flex"
-                >
-                    <BannerCard
-                    img={"https://i.ibb.co.com/bLZFnSD/Fried-Chicken.jpg"}
-                    name={"Fried Chiken"}
-                    ></BannerCard>
-                </motion.div>
                     <motion.div
                         animate={{
                             // x:[-50, 900, -50],
-                            y: [-120, 120, -120],
+                            y: [-180, -50, -180],
                             rotate: 360
 
                         }}
                         transition={{
                             repeat: Infinity,
                             repeatType: "loop", // Can be "reverse" or "loop"
-                            duration: 10, // Duration of one rotation (in seconds)
+                            duration: 8, // Duration of one rotation (in seconds)
+                            ease: "linear", // Smooth linear rotation
+                        }}
+                        className="absolute left-20 hidden md:flex"
+                    >
+                        <BannerCard
+                            img={"https://i.ibb.co.com/bLZFnSD/Fried-Chicken.jpg"}
+                            name={"Fried Chiken"}
+                        ></BannerCard>
+                    </motion.div>
+                    <motion.div
+                        animate={{
+                            // x:[-50, 900, -50],
+                            y: [-50, -180, -50],
+                            rotate: 360
+
+                        }}
+                        transition={{
+                            repeat: Infinity,
+                            repeatType: "loop", // Can be "reverse" or "loop"
+                            duration: 8, // Duration of one rotation (in seconds)
                             ease: "linear", // Smooth linear rotation
                         }}
                         className="absolute right-20 hidden md:flex"
                     >
                         <BannerCard
-                        img={"https://i.ibb.co.com/VjC7VLc/burger.jpg"}
-                        name={" Burger"}
-                        
+                            img={"https://i.ibb.co.com/VjC7VLc/burger.jpg"}
+                            name={" Burger"}
+
                         ></BannerCard>
                     </motion.div>
+                </div>
+
                 <div className="hero-content text-white text-center ">
                     <motion.div
                         variants={awardVariant}
