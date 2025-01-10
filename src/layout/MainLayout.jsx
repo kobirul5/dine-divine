@@ -11,14 +11,14 @@ const MainLayout = () => {
     const { loading, } = useContext(AuthContext)
     const location = useLocation()
 
+    // ${location.pathname == "/" || location.pathname === "/allFood" || location.pathname === "/gallery" ? "absolute w-full z-10 border-b border-primaryColor": "h-16 bg-white"}
 
-
-    if (loading) {
-        return <Spinner></Spinner>
-    }
+    // if (loading) {
+    //     return <Spinner></Spinner>
+    // }
     return (
-        <div className="relative">
-            <nav className={`${location.pathname == "/" || location.pathname === "/allFood" || location.pathname === "/gallery" ? "absolute w-full z-10 border-b border-primaryColor": "h-16 bg-white"}`}>
+        <div className="">
+            <nav className={` border-b sticky top-0 z-10 border-primaryColor `}>
                 <Navbar></Navbar>
             </nav>
             <Toaster></Toaster>

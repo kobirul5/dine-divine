@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const MyFoodCard = ({ food }) => {
     const { _id, foodName, foodImage, foodCategory, quantity, price, foodOrigin, description, email, name
     } = food
+    
     return (
         <div className=' flex flex-col md:flex-row justify-center items-center md:grid-cols-2 gap-10 my-3 border p-6 rounded-2xl'>
             <div>

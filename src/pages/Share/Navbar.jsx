@@ -21,9 +21,11 @@ const Navbar = () => {
         <li><NavLink to="/"  className={`btn  nav-btn hover:bg-secondaryColor hover:text-primaryColor text-primaryColor ${location.pathname === "/"}`}>Home</NavLink></li>
         <li><NavLink to="/allFood" className='btn nav-btn hover:bg-secondaryColor hover:text-primaryColor text-primaryColor'>All Foods</NavLink></li>
         <li><NavLink to="/gallery" className='btn nav-btn hover:bg-secondaryColor hover:text-primaryColor text-primaryColor'>Gallery</NavLink></li>
+        <li><NavLink to="/abutUs" className='btn nav-btn hover:bg-secondaryColor hover:text-primaryColor text-primaryColor'>About Us</NavLink></li>
+
     </>
     return (
-        <div className="navbar bg-none backdrop-blur-sm">
+        <div className="navbar border-b sticky top-0 z-10 border-primaryColor  bg-white bg-opacity-20 backdrop-blur-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn nav-btn p-1 text-primaryColor  lg:hidden">

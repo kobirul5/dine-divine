@@ -10,7 +10,6 @@ import BannerCard from "./BannerCard.jsx/BannerCard";
 
 
 const Banner = () => {
-
     const awardVariant = {
         initial: {
             y: -100,
@@ -30,7 +29,7 @@ const Banner = () => {
     return (
         <div  className="z-0">
             <motion.div
-                className="hero min-h-screen box relative"
+                className="hero h-[500px] box "
                 style={{
                     backgroundImage: `url(${BannerImage})`,
                 }}>
