@@ -9,6 +9,7 @@ import { FaSearch } from "react-icons/fa";
 const AllFood = () => {
     const [foods, setFoods] = useState([])
     const [search , setSearch] = useState("")
+    
     useEffect(() => {
         // The URL of the API endpoint
         const fetchData = async () => {
@@ -20,6 +21,13 @@ const AllFood = () => {
         };
         fetchData();
     }, []);
+console.log(foods)
+    const handleSort =  ()=>{
+        const sortFood = [...foods]?.sort((a,b)=>b.price-a.price)
+        setFoods(sortFood)
+        console.log(sortFood)
+    }
+
     return (
         <div className="">
             <div
@@ -38,9 +46,12 @@ const AllFood = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-16 container mx-auto px-4 ">
-                <label className="input input-bordered flex items-center gap-2 max-w-[400px]">
-                    <input onChange={(e)=> setSearch(e.target.value.toLowerCase())} type="text" className="grow" placeholder="Search" />
+            <div className="mt-16 container mx-auto px-4 flex flex-col md:flex-row justify-between">
+                <div className="btn bg-primaryColor hover:bg-white  hover:border-primaryColor font-bold hover:text-primaryColor text-white ">
+                    <button onClick={handleSort}>Sort by Price</button>
+                </div>
+                <label className="input  input-bordered border-primaryColor flex items-center gap-2 max-w-[400px]">
+                    <input  onChange={(e)=> setSearch(e.target.value.toLowerCase())} type="text" className="grow" placeholder="Search" />
                     {/* <button className=""><FaSearch /></button> */}
                 </label>
             </div>
