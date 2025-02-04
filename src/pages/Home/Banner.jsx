@@ -1,31 +1,25 @@
 import { Link } from "react-router-dom";
 import BannerImage from "../../assets/img/Banner.jpg"
 import { motion, } from "motion/react"
-
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import BannerCard from "./BannerCard.jsx/BannerCard";
+import { memo } from "react";
 
 
-const Banner = () => {
+const Banner =  memo(({ img, name }) => {
     const awardVariant = {
-        initial: {
-            y: -100,
-            opacity: 0,
-        },
-        animate: {
-            y: 0,
-            opacity: 1,
+        initial: { y: -100, opacity: 0 },
+        animate: { y: 0, opacity: 1, transition: { duration: 1, staggerChildren: 0.2 } },
+    };
 
-        },
-        transition: {
-            duration: 1,
-            staggerChildren: 0.2,
+    const cardAnimation = {
+        animate: { y: [-50, -100, -50], rotate: [0, 10, -10, 0] },
+        transition: { repeat: Infinity, duration: 5, ease: "easeInOut" },
+    };
+    const cardAnimation2 = {
+        animate: { y: [-100, -50, -100], rotate: [0, 10, -10, 0] },
+        transition: { repeat: Infinity, duration: 5, ease: "easeInOut" },
+    };
 
-        }
-    }
     return (
         <div className="z-0">
             <motion.div
@@ -38,18 +32,7 @@ const Banner = () => {
                 <div className="container mx-auto relative">
 
                     <motion.div
-                        animate={{
-                            // x:[-50, 900, -50],
-                            y: [-180, -50, -180],
-                            rotate: 360
-
-                        }}
-                        transition={{
-                            repeat: Infinity,
-                            repeatType: "loop", // Can be "reverse" or "loop"
-                            duration: 8, // Duration of one rotation (in seconds)
-                            ease: "linear", // Smooth linear rotation
-                        }}
+                        {...cardAnimation}
                         className="absolute left-20 hidden md:flex"
                     >
                         <BannerCard
@@ -58,18 +41,7 @@ const Banner = () => {
                         ></BannerCard>
                     </motion.div>
                     <motion.div
-                        animate={{
-                            // x:[-50, 900, -50],
-                            y: [-50, -180, -50],
-                            rotate: 360
-
-                        }}
-                        transition={{
-                            repeat: Infinity,
-                            repeatType: "loop", // Can be "reverse" or "loop"
-                            duration: 8, // Duration of one rotation (in seconds)
-                            ease: "linear", // Smooth linear rotation
-                        }}
+                       {...cardAnimation2}
                         className="absolute right-20 hidden md:flex"
                     >
                         <BannerCard
@@ -95,16 +67,16 @@ const Banner = () => {
 
                             className="mb-5">Discover a world of fresh flavors and delightful dishes. Experience gourmet meals crafted with love and the finest ingredients.
                         </motion.p>
-                        <motion.p
+                        <motion.div
                             variants={awardVariant}
                         >
                             <Link to="/allFood" className="btn bg-primaryColor hover:bg-secondaryColor hover:text-primaryColor text-secondaryColor border-none">All Food</Link>
-                        </motion.p>
+                        </motion.div>
                     </motion.div>
                 </div>
             </motion.div>
         </div>
     );
-};
+});
 
 export default Banner;

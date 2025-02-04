@@ -15,11 +15,15 @@ const Reserve = () => {
                 <div className=" container mx-auto flex flex-col lg:flex-row items-center justify-center md:p-6 gap-8 bg-white border border-primaryColor">
                     {/* Promo Card */}
                     <motion.div
-                    animate={{
-                        x: [-200, 0],
-                        opacity: [0,1],
+                    initial={{
+                        x: -200,
+                        opacity: 0,
                     }}
-                    transition={{duration:3, delay:1, }}
+                    whileInView={{
+                        x: 0,
+                        opacity:1
+                    }}
+                    transition={{duration:1, delay:0.5, }}
                     viewport={{ root: scrollRef }}
                      className="card w-full flex-1  rounded-lg p-4">
                         <div className="relative">

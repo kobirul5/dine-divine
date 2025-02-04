@@ -78,7 +78,7 @@ const MyOrders = () => {
                                 key={idx}
 
                             >   <th>{idx+1}</th>
-                                <th><img className='w-20' src={order.foodImage} alt="" /></th>
+                                <th><img className='w-20 h-20 object-cover' src={order.foodImage} alt="" /></th>
                                 <td>{order?.foodName}</td>
                                 <td>{order?.buyerName}</td>
                                 <td>{format(order?.buyingDate, "dd/MM/yyyy")}</td>
