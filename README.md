@@ -1,5 +1,10 @@
 # Dine Divine
 
+<div>
+  <img height="500" src="./src/assets/projectImage/image1.jpg />
+</div>
+
+###
 ## Project Purpose
 Dine Divine is a visually appealing and interactive website for a restaurant. The purpose of this project is to showcase the restaurant's offerings, highlight customer testimonials, and provide users with an intuitive navigation experience.
 
@@ -28,9 +33,13 @@ Dine Divine is a visually appealing and interactive website for a restaurant. Th
 - **Tailwind CSS**: For responsive and modern styling.
 - **DaysiUI**: For responsive and modern styling.
 - **Firebase**: For authentication and deployment.
-
-
 - **MongoDB**: As a Database.
+
+### Run Locally:
+- **Cloning the Repository**: The first step to get the project on your local machine.
+- **Installing Dependencies**: Using `npm install` to set up the project.
+- **Running the Project Locally**: You can view it on `http://localhost:5173`.
+
 ## Dependencies
     "axios": "^1.7.9",
     "date-fns": "^4.1.0",
