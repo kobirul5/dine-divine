@@ -1,7 +1,7 @@
 # Dine Divine
 
 <div>
-  <img height="500" src="./src/assets/projectImage/image1.jpg />
+  <img height="500" src="./src/assets/projectImage/image1.jpg" />
 </div>
 
 ###
