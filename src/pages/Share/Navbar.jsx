@@ -2,20 +2,22 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FaBars } from 'react-icons/fa6';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import AuthContext from '../../provider/AuthContext';
+import { ThemeContext } from '../../provider/ThemeProvider';
 
 const Navbar = () => {
     const { user, userLogout } = useContext(AuthContext)
-    const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
+    const  {theme, toggleTheme} = useContext(ThemeContext)
+    // const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
     const location = useLocation()
 
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme); // Save preference
-    }, [theme])
+    // useEffect(() => {
+    //     document.documentElement.setAttribute('data-theme', theme);
+    //     localStorage.setItem('theme', theme); // Save preference
+    // }, [theme])
 
-    const toggleTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
-    };
+    // const toggleTheme = () => {
+    //     setTheme(theme === 'light' ? 'dark' : 'light');
+    // };
 
     const links = <>
         <li><NavLink to="/"  className={`btn  nav-btn hover:bg-secondaryColor hover:text-primaryColor text-primaryColor ${location.pathname === "/"}`}>Home</NavLink></li>

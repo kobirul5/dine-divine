@@ -4,7 +4,6 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged,
 import auth from '../firebase/firebase.init';
 import toast from 'react-hot-toast';
 import axios from 'axios';
-import { use } from 'react';
 
 
 
