@@ -1,12 +1,18 @@
-import React, { useRef } from 'react';
+
 import ReserveImag from "../../assets/img/room.jpg"
 import FoodImag from "../../assets/img/food.jpg"
 import { motion} from "motion/react"
+import toast from "react-hot-toast";
 const Reserve = () => {
-   const scrollRef = useRef(null)
+
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        toast.success("Massage send Successfully")
+    }
+
+
     return (
         <div
-           
             className="hero  my-14 bg-fixed"
             style={{
                 backgroundImage: `url(${ReserveImag})`,
@@ -42,18 +48,20 @@ const Reserve = () => {
                         <p className="text-center text-black mb-6">
                             Booking request: +088 01958545441 or fill out the order form
                         </p>
-                        <form className="space-y-4">
+                        <form onSubmit={handleSubmit} className="space-y-4">
                             {/* Name and Phone */}
                             <div className="flex gap-4">
                                 <input
                                     type="text"
                                     placeholder="Your Name"
                                     className="input input-bordered w-full"
+                                    required
                                 />
                                 <input
                                     type="text"
                                     placeholder="Phone Number"
                                     className="input input-bordered w-full"
+                                    required
                                 />
                             </div>
 
@@ -83,6 +91,7 @@ const Reserve = () => {
                                 placeholder="Message"
                                 className="textarea textarea-bordered w-full"
                                 rows="3"
+                                required
                             ></textarea>
 
                             {/* Submit Button */}
