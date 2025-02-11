@@ -34,7 +34,7 @@ const Banner =  memo(({ img, name }) => {
 
                     <motion.div
                         {...cardAnimation}
-                        className="absolute left-20 hidden md:flex"
+                        className="absolute left-20 hidden lg:flex"
                     >
                         <BannerCard
                             img={cardImage2}
@@ -43,7 +43,7 @@ const Banner =  memo(({ img, name }) => {
                     </motion.div>
                     <motion.div
                        {...cardAnimation2}
-                        className="absolute right-20 hidden md:flex"
+                        className="absolute right-20 hidden lg:flex"
                     >
                         <BannerCard
                             img={cardImage1}

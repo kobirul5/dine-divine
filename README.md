@@ -9,7 +9,7 @@
 Dine Divine is a visually appealing and interactive website for a restaurant. The purpose of this project is to showcase the restaurant's offerings, highlight customer testimonials, and provide users with an intuitive navigation experience.
 
 ## Live URL
-[Visit Dine Divine](https://assignment-11-client-1cccb.web.app/)
+[Visit Dine Divine](https://dine-divine-0.web.app/)
 
 ## Key Features
 - **Home Page**: Engaging landing page with high-quality visuals and a welcoming message.
