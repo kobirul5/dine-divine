@@ -5,6 +5,7 @@ import TopFood from './TopFood';
 import HappyClient from './HappyClient';
 import Reserve from './Reserve';
 import Welcome from './Welcome';
+import OnlineOrder from './OnlineOrder';
 
 
 const Home = () => {
@@ -12,10 +13,11 @@ const Home = () => {
 
      
     return (
-        <div>
+        <div className='space-y-20'>
             <Banner/>
             <TopFood></TopFood>
             <Welcome></Welcome>
+            <OnlineOrder></OnlineOrder>
             <HappyClient></HappyClient>
             <Reserve></Reserve>
         </div>

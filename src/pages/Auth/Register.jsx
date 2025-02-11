@@ -62,7 +62,7 @@ const Register = () => {
                         <Lottie animationData={RegistrationAnimation} loop={true}></Lottie>
                     </div>
                 </div>
-                <div className="card flex-1 backdrop-blur-lg w-full max-w-xl shrink-0 shadow-2xl">
+                <div className="card flex-1 backdrop-blur-lg w-full max-w-lg shrink-0 shadow-2xl lg:ml-10">
                     <form onSubmit={handleRegister} className="card-body pb-0">
                         <div className="form-control">
                             <label className="label">
