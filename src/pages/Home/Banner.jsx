@@ -3,7 +3,8 @@ import BannerImage from "../../assets/img/Banner.jpg"
 import { motion, } from "motion/react"
 import BannerCard from "./BannerCard.jsx/BannerCard";
 import { memo } from "react";
-
+import cardImage1 from "../../assets/img/cardImage1.jpg"
+import cardImage2 from "../../assets/img/cardImage2.jpg"
 
 const Banner =  memo(({ img, name }) => {
     const awardVariant = {
@@ -36,7 +37,7 @@ const Banner =  memo(({ img, name }) => {
                         className="absolute left-20 hidden md:flex"
                     >
                         <BannerCard
-                            img={"https://i.ibb.co.com/bLZFnSD/Fried-Chicken.jpg"}
+                            img={cardImage2}
                             name={"Fried Chiken"}
                         ></BannerCard>
                     </motion.div>
@@ -45,7 +46,7 @@ const Banner =  memo(({ img, name }) => {
                         className="absolute right-20 hidden md:flex"
                     >
                         <BannerCard
-                            img={"https://i.ibb.co.com/VjC7VLc/burger.jpg"}
+                            img={cardImage1}
                             name={" Burger"}
 
                         ></BannerCard>

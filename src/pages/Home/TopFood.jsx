@@ -17,7 +17,7 @@ const TopFood = () => {
             }
         };
         fetchData();
-    })
+    }, [])
 
     return (
         <div className="my-14 container mx-auto px-5">

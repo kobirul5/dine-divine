@@ -6,25 +6,21 @@ const Reserve = () => {
    const scrollRef = useRef(null)
     return (
         <div
-            className="hero min-h-screen my-14 "
+           
+            className="hero  my-14 bg-fixed"
             style={{
                 backgroundImage: `url(${ReserveImag})`,
             }}>
             <div className="hero-overlay bg-opacity-70"></div>
             <div className="hero-content  text-center  md:max-w-[80%] lg:max-w-[1000px] xl:max-w-[1200px] ">
-                <div className=" container mx-auto flex flex-col lg:flex-row items-center justify-center md:p-6 gap-8 bg-white border border-primaryColor">
+                <motion.div
+                     initial={{opacity:0, y:50}}
+                     whileInView={{opacity:1, y:0}}
+                     transition={{delay:0.2, duration:0.4, ease: "easeInOut"}}
+                     viewport={{once:true}}
+                 className=" my-10 container mx-auto flex flex-col lg:flex-row items-center justify-center md:p-6 gap-8 bg-white border border-primaryColor">
                     {/* Promo Card */}
-                    <motion.div
-                    initial={{
-                        x: -200,
-                        opacity: 0,
-                    }}
-                    whileInView={{
-                        x: 0,
-                        opacity:1
-                    }}
-                    transition={{duration:1, delay:0.5, }}
-                    viewport={{ root: scrollRef }}
+                    <div
                      className="card w-full flex-1  rounded-lg p-4">
                         <div className="relative">
                             <img
@@ -38,7 +34,7 @@ const Reserve = () => {
                                 <button className="btn bg-primaryColor hover:bg-secondaryColor hover:text-primaryColor text-secondaryColor border-none mt-4">Book Now</button>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Reservation Form */}
                     <div className="card w-full lg:w-1/2 rounded-lg p-6">
@@ -93,7 +89,7 @@ const Reserve = () => {
                             <button className="btn bg-primaryColor hover:bg-secondaryColor hover:text-primaryColor text-secondaryColor border-none w-full">Book a Table</button>
                         </form>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );
