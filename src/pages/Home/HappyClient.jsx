@@ -71,7 +71,7 @@ const HappyClient = () => {
                 <p className="text-primaryColor">Happy Client</p>
                 <h1 className="text-3xl md:text-5xl font-bold">What's Our Customer Say</h1>
             </div>
-            <section className='my-10 mx-auto'>
+            <section className='my-10 mx-auto '>
                 <Swiper
 
                     modules={[Navigation, Pagination, Scrollbar, Autoplay, A11y]}
@@ -97,10 +97,11 @@ const HappyClient = () => {
                             slidesPerView: 3,
                         },
                     }}
+                    className='flex justify-center items-center mx-auto'
                 >
                     {
                         reviewsClient.map((review, idx) => <SwiperSlide key={idx} >
-                            <div className="card bg-base-100 w-80 xl:w-96 shadow-xl border border-primaryColor">
+                            <div className="card bg-base-100 w-full xl:w-96 shadow-xl border border-primaryColor">
                                 <div className="card-body items-center text-center">
                                     <h2 className="card-title text-xl font-bold">{review.name}</h2>
                                     <h2 className=' font-semibold'>{review.profession}</h2>

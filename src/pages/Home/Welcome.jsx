@@ -18,6 +18,7 @@ const Welcome = () => {
             opacity:1,
          }}
          transition={{duration:1,  ease:easeInOut}}
+         viewport={{once:true}}
          className="container mx-auto px-4 flex flex-col md:flex-row gap-10 items-center my-14 justify-center  p-8">
                 {/* Text Section  */}
                 <div className="text-center md:text-left md:w-1/3 mb-8 md:mb-0">
