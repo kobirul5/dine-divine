@@ -1,24 +1,11 @@
-import { useEffect, useState } from "react";
 import FoodCard from "../AllFood/FoodCard";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useTopFood from "../../hooks/useTopFood";
 
 const TopFood = () => {
-    const [foods, setFoods] = useState()
-
-    useEffect(() => {
-        // The URL of the API endpoint
-        const fetchData = async () => {
-            try {
-                const { data } = await axios.get('https://assignment-11-server-neon-eta.vercel.app/topFood');
-                setFoods(data);
-            } catch (error) {
-                console.log(error)
-            }
-        };
-        fetchData();
-    }, [])
-
+    const [topFood] = useTopFood()
+    
     return (
         <div className="my-14 container mx-auto px-5">
             <div>
@@ -28,7 +15,7 @@ const TopFood = () => {
             
             <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4  gap-10 mb-5 mt-10">
                 {
-                    foods?.map((food, idx) =>
+                    topFood?.map((food, idx) =>
                         <FoodCard
                             key={idx}
                             food={food}
