@@ -20,6 +20,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import Dashboard from "../pages/Dashboard/Shared/Dashboard";
 import DashboardLayout from "../layout/DashboardLayout";
+import ContactUs from "../pages/ContactUs/ContactUs";
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             {
                 path: "/abutUs",
                 element: <AboutUs></AboutUs>
+            },
+            {
+                path: "/contact",
+                element: <ContactUs/>
             },
             {
                 path: "/addFood",

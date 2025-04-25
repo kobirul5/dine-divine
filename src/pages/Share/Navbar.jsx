@@ -24,6 +24,7 @@ const Navbar = () => {
         <li><NavLink to="/allFood" className='btn nav-btn hover:bg-secondaryColor hover:text-primaryColor text-primaryColor'>All Foods</NavLink></li>
         <li><NavLink to="/gallery" className='btn nav-btn hover:bg-secondaryColor hover:text-primaryColor text-primaryColor'>Gallery</NavLink></li>
         <li><NavLink to="/abutUs" className='btn nav-btn hover:bg-secondaryColor hover:text-primaryColor text-primaryColor'>About Us</NavLink></li>
+        <li><NavLink to="/contact" className='btn nav-btn hover:bg-secondaryColor hover:text-primaryColor text-primaryColor'>Contact Us</NavLink></li>
 
     </>
     
@@ -107,6 +108,7 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-primaryColor rounded-box mt-3 w-52 z-30 p-2 shadow">
+                        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                         <li><NavLink to="/myFood" state={user?.email}>My Foods</NavLink></li>
                         <li><NavLink to="/addFood" >Add food</NavLink></li>
                         <li><NavLink to="/myOrders" >My Orders</NavLink></li>
