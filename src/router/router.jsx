@@ -18,6 +18,8 @@ import Gallery from "../pages/Gallary/Gallery";
 import MyOrdersPri from "../privateRoute/MyOrdersPri";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AboutUs from "../pages/AboutUs/AboutUs";
+import Dashboard from "../pages/Dashboard/Shared/Dashboard";
+import DashboardLayout from "../layout/DashboardLayout";
 
 
 const router = createBrowserRouter([
@@ -81,6 +83,16 @@ const router = createBrowserRouter([
             {
                 path: "/auth/register",
                 element: <Register></Register>
+            }
+        ]
+    },
+    {
+        path: "dashboard",
+        element: <DashboardLayout/>,
+        children: [
+            {
+                path: "/dashboard",
+                element: <Dashboard/>
             }
         ]
     }

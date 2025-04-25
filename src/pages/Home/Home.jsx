@@ -18,8 +18,8 @@ const Home = () => {
             <TopFood></TopFood>
             <Welcome></Welcome>
             <OnlineOrder></OnlineOrder>
-            <HappyClient></HappyClient>
             <Reserve></Reserve>
+            <HappyClient></HappyClient>
         </div>
     );
 };
