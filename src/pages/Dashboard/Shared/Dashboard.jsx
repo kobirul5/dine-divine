@@ -8,7 +8,7 @@ const Dashboard = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <div className="bg-white p-4 rounded-lg shadow-sm flex items-center">
-          <FaUtensils className="w-8 h-8 text-blue-600 mr-4" />
+          <FaUtensils className="w-8 h-8 text-primaryColor mr-4" />
           <div>
             <p className="text-gray-500">Total Menu Items</p>
             <p className="text-2xl font-bold">45</p>

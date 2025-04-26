@@ -92,7 +92,7 @@ const Navbar = () => {
 
                 {
                     user?.email ?
-                        <button onClick={userLogout} className="btn text-primaryColor border-primaryColor hover:bg-secondaryColor">Log Out</button>
+                       ""
                         :
                         <Link to="/auth/login" className="btn text-primaryColor border-primaryColor hover:bg-secondaryColor">Login</Link>
                 }
@@ -107,12 +107,10 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-primaryColor rounded-box mt-3 w-52 z-30 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-primaryColor rounded-box mt-3 w-52 z-30 p-2 shadow text-white">
                         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-                        <li><NavLink to="/myFood" state={user?.email}>My Foods</NavLink></li>
-                        <li><NavLink to="/addFood" >Add food</NavLink></li>
-                        <li><NavLink to="/myOrders" >My Orders</NavLink></li>
-
+                        <li> <button onClick={userLogout} className=" border-primaryColor ">Log Out</button></li>
+                        
                     </ul>
                 </div>
             </div >

@@ -46,10 +46,6 @@ const router = createBrowserRouter([
                 element: <ContactUs/>
             },
             {
-                path: "/addFood",
-                element: <AddFoodPri><AddFood></AddFood></AddFoodPri>
-            },
-            {
                 path: "/allFood",
                 element: <AllFood></AllFood>
             },
@@ -57,14 +53,7 @@ const router = createBrowserRouter([
                 path: "/foodDetails/:id",
                 element: <FoodDetails></FoodDetails>
             },
-            {
-                path: "/myFood",
-                element: <MyFoodPri><MyFood></MyFood></MyFoodPri>
-            },
-            {
-                path: "/myOrders",
-                element: <MyOrdersPri><MyOrders></MyOrders></MyOrdersPri>
-            },
+            
             {
                 path: "/updateFood/:id",
                 element: <UpdateFood></UpdateFood>,
@@ -92,13 +81,27 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: "dashboard",
+        path: "/dashboard",
         element: <DashboardLayout/>,
         children: [
             {
                 path: "/dashboard",
                 element: <Dashboard/>
-            }
+            },
+            // admin route
+            {
+                path: "addFood",
+                element: <AddFoodPri><AddFood></AddFood></AddFoodPri>
+            },
+            {
+                path: "myFoods",
+                element: <MyFoodPri><MyFood></MyFood></MyFoodPri>
+            },
+            // users route
+            {
+                path: "myOrders",
+                element: <MyOrdersPri><MyOrders></MyOrders></MyOrdersPri>
+            },
         ]
     }
 ])

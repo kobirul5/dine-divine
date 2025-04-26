@@ -2,23 +2,31 @@
 import { Link } from 'react-router-dom';
 import { FiX, FiMenu } from 'react-icons/fi';
 import { 
-  FaUser, FaUtensils, FaShoppingCart, FaCalendarAlt, FaUsersCog, FaCog 
+  FaUser, FaUtensils, FaShoppingCart, FaCalendarAlt, FaUsersCog, FaCog, 
+  FaHome
 } from 'react-icons/fa';
 
 const Sidebar = ({ userRole, sidebarOpen, setSidebarOpen }) => {
   const userLinks = [
-    { name: `${userRole === "admin"? 'Admin Home' : "user admin"}`, path: '/dashboard', icon: <FaUser /> },
-    { name: 'Menu', path: '/dashboard/menu', icon: <FaUtensils /> },
-    { name: 'Orders', path: '/dashboard/orders', icon: <FaShoppingCart /> },
-    { name: 'Reservations', path: '/dashboard/reservations', icon: <FaCalendarAlt /> },
-    { name: 'Profile', path: '/dashboar/profile', icon: <FaUser /> },
+    { name: `${userRole === "admin"? 'Admin Home' : "Dashboard"}`, path: '/dashboard', icon: <FaUser /> },
+    // { name: 'Menu', path: '/dashboard/menu', icon: <FaUtensils /> },
+    { name: 'Orders', path: '/dashboard/myOrders', icon: <FaShoppingCart /> },
+    // { name: 'Reservations', path: '/dashboard/reservations', icon: <FaCalendarAlt /> },
+    // { name: 'Profile', path: '/dashboar/profile', icon: <FaUser /> },
   ];
 
   const adminLinks = [
     ...userLinks,
-    { name: 'Staff', path: '/staff', icon: <FaUsersCog /> },
-    { name: 'Settings', path: '/settings', icon: <FaCog /> },
+    // { name: 'Staff', path: '/staff', icon: <FaUsersCog /> },
+    // { name: 'Settings', path: '/settings', icon: <FaCog /> },
+    { name: 'Add Food', path: '/dashboard/addFood', icon: <FaCog /> },
+    { name: 'My Food', path: '/dashboard/myFoods', icon: <FaCog /> },
   ];
+
+  // route 
+  const commonLinks = [
+    {name: 'Home', path: '/', icon: <FaHome/>}
+  ]
 
   const links = userRole === 'admin' ? adminLinks : userLinks;
 
@@ -43,7 +51,19 @@ const Sidebar = ({ userRole, sidebarOpen, setSidebarOpen }) => {
               {link.name}
             </Link>
           ))}
+          <div className='border-t border-white mb-2'></div>
+          {commonLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className="flex items-center p-3 mb-2  rounded-lg hover:bg-secondaryColor hover:text-white"
+            >
+              <span className="mr-3">{link.icon}</span>
+              {link.name}
+            </Link>
+          ))}
         </nav>
+
       </div>
       
       {/* Mobile menu button */}

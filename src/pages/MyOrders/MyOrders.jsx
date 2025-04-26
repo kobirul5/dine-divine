@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 
 const MyOrders = () => {
     const { user } = useContext(AuthContext)
-    const [myOrders, setMyOrders] = useState()
+    const [myOrders, setMyOrders] = useState([])
 
 
     useEffect(() => {
@@ -54,6 +54,10 @@ const MyOrders = () => {
             
         }
 
+    }
+
+    if(myOrders.length === 0 || !myOrders) {
+        return <h2 className="text-3xl md:text-5xl text-primaryColor font-bold text-center">You haven't placed any order yet</h2>
     }
 
     return (
